@@ -19,8 +19,8 @@ android {
         applicationId = "app.otoradyo"
         // Araç ekranları genelde eski Android sürümleri çalıştırır (DiLink 3: Android 10); yerel kod Android 8.0'a (API 26) kadar iner.
         minSdk = 26
-        versionCode = 12
-        versionName = "1.0.0"
+        versionCode = 13
+        versionName = "1.1.0"
 
         ndk {
             // Çekirdek NEON'lu 64 bit ARM'da gerçek zamanlı çalışır; tüm yerel kod kaynaktan derlenir.

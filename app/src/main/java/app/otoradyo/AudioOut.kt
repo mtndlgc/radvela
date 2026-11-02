@@ -24,7 +24,35 @@ class AudioOut {
             intArrayOf(-2, 0, 3, 3, 0),    // konuşma
             intArrayOf(0, 0, 0, 3, 6),     // tiz
             intArrayOf(5, 2, 0, 2, 5),     // gürlük
+            intArrayOf(4, 2, -1, 2, 4),    // rock
+            intArrayOf(-1, 2, 4, 2, -1),   // pop
+            intArrayOf(3, 2, -1, 1, 2),    // caz
+            intArrayOf(3, 1, 0, 1, 3),     // klasik
+            intArrayOf(5, 3, -1, 2, 4),    // elektronik
         )
+
+        /** Verilen ses oturumuna ön ayarı uygular; düz ön ayarda ya da cihaz desteklemiyorsa null döner. */
+        fun makeEq(sessionId: Int, preset: Int): Equalizer? {
+            val curve = EQ_CURVES.getOrNull(preset) ?: return null
+            if (curve.all { it == 0 }) return null
+            try {
+                val e = Equalizer(0, sessionId)
+                val bands = e.numberOfBands.toInt()
+                val range = e.bandLevelRange
+                for (b in 0 until bands) {
+                    // Eğri 5 noktalıdır; cihazın bant sayısı farklı olabilir
+                    val pos = if (bands > 1) b * (curve.size - 1f) / (bands - 1) else 0f
+                    val i = pos.toInt().coerceAtMost(curve.size - 2)
+                    val db = curve[i] + (curve[i + 1] - curve[i]) * (pos - i)
+                    e.setBandLevel(b.toShort(), (db * 100).toInt().coerceIn(range[0].toInt(), range[1].toInt()).toShort())
+                }
+                e.enabled = true
+                return e
+            } catch (ex: RuntimeException) {
+                android.util.Log.w("OtoRadyo", "ekolayzer kullanilamadi: $ex")
+                return null
+            }
+        }
     }
 
     private var track: AudioTrack? = null
@@ -60,24 +88,7 @@ class AudioOut {
         eq?.release()
         eq = null
         val t = track ?: return
-        val curve = EQ_CURVES.getOrNull(eqPreset) ?: return
-        if (curve.all { it == 0 }) return
-        try {
-            val e = Equalizer(0, t.audioSessionId)
-            val bands = e.numberOfBands.toInt()
-            val range = e.bandLevelRange
-            for (b in 0 until bands) {
-                // Eğri 5 noktalıdır; cihazın bant sayısı farklı olabilir
-                val pos = if (bands > 1) b * (curve.size - 1f) / (bands - 1) else 0f
-                val i = pos.toInt().coerceAtMost(curve.size - 2)
-                val db = curve[i] + (curve[i + 1] - curve[i]) * (pos - i)
-                e.setBandLevel(b.toShort(), (db * 100).toInt().coerceIn(range[0].toInt(), range[1].toInt()).toShort())
-            }
-            e.enabled = true
-            eq = e
-        } catch (ex: RuntimeException) {
-            android.util.Log.w("OtoRadyo", "ekolayzer kullanilamadi: $ex")
-        }
+        eq = makeEq(t.audioSessionId, eqPreset)
     }
 
     @Synchronized

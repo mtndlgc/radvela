@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">MUSIK</string>
+    <string name="music_seg">MUSIK</string>
+    <string name="menu_music_s">Spielt Musik von Gerät, SD-Karte und USB</string>
+    <string name="music_src_device">Dieses Gerät</string>
+    <string name="music_all">Alle</string>
+    <string name="music_search">Suchen</string>
+    <string name="music_count">%1$d Titel</string>
+    <string name="music_perm">Erlaube den Zugriff, um Musik auf diesem Gerät zu finden.</string>
+    <string name="music_perm_btn">ERLAUBEN</string>
+    <string name="music_empty">Keine Musik gefunden. Mit + fügst du einen Ordner hinzu, zum Beispiel auf einem USB-Stick.</string>
+    <string name="music_loading">Musik wird gesucht…</string>
+    <string name="music_none">Wähle einen Titel aus der Liste</string>
+    <string name="music_rescan">Neu suchen</string>
+    <string name="music_add_folder">Ordner hinzufügen</string>
+    <string name="music_remove_folder">„%1$s“ aus der Musikliste entfernen? Deine Dateien bleiben erhalten.</string>
+    <string name="music_failed">Diese Musik konnte nicht abgespielt werden. Die Datei oder das Laufwerk fehlt vielleicht.</string>
+    <string name="music_songs">Titel</string>
+    <string name="music_folders">Ordner</string>
+    <string name="music_albums">Alben</string>
+    <string name="music_artists">Interpreten</string>
+    <string name="music_sd">SD-Karte</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">Unbekannt</string>
+    <string name="music_empty_src">Hier ist keine Musik. Ist das Laufwerk angeschlossen, aber leer, wähle seinen Ordner mit +.</string>
+    <string name="eq_rock">Rock</string>
+    <string name="eq_pop">Pop</string>
+    <string name="eq_jazz">Jazz</string>
+    <string name="eq_classical">Klassik</string>
+    <string name="eq_electronic">Elektronisch</string>
+</resources>

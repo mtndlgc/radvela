@@ -26,6 +26,11 @@ class Prefs(context: Context) {
         get() = sp.getBoolean("onlineLogos", false)
         set(v) = sp.edit().putBoolean("onlineLogos", v).apply()
 
+    /** Kullanıcının müzik için seçtiği klasörler (kalıcı erişim izinli belge ağacı adresleri). */
+    var musicFolders: Set<String>
+        get() = sp.getStringSet("musicFolders", emptySet()) ?: emptySet()
+        set(v) = sp.edit().putStringSet("musicFolders", v).apply()
+
     /** Gündüz/gece görünümü: 0 = sistemi izle, 1 = gündüz, 2 = gece. */
     var appearance: Int
         get() = sp.getInt("appearance", 0)

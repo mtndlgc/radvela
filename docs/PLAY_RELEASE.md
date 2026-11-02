@@ -41,9 +41,10 @@ gradlew bundlePlayRelease
 3. Gizlilik politikası: `docs/PRIVACY.md` dosyasını herkese açık bir adreste yayımlayın.
 4. Veri güvenliği formu önerisi: reklam, analiz ve satın alma yok. Logo aramasında istasyon adları üçüncü tarafa gider; formu bu bilgiyle doldurun.
 5. Ön plan servisi beyanı: `mediaPlayback`, kullanıcı başlattığı canlı radyo sesi; kısa bir video isteyebilir.
-6. İçerik derecelendirmesi anketi ve hedef kitle.
-7. Mağaza görselleri: uygulama simgesi 512×512, öne çıkan görsel 1024×500, telefon ve tablet ekran görüntüleri. Metin: `docs/STORE_LISTING.md`.
-8. Mağaza açıklamasında ve görsellerde dongle gerektiğini açıkça belirtin; BYD ve DAB+ logolarını kullanmayın.
+6. Müzik çalar `READ_MEDIA_AUDIO` izni ister; izin beyanında "cihazdaki müzik dosyalarını listeleyip çalmak" diye açıklayın. Veri güvenliği formunda dosyalar cihazdan çıkmaz. SD kart ve USB bellekle gerçek deneme yapın.
+7. İçerik derecelendirmesi anketi ve hedef kitle.
+8. Mağaza görselleri: uygulama simgesi 512×512, öne çıkan görsel 1024×500, telefon ve tablet ekran görüntüleri. Metin: `docs/STORE_LISTING.md`.
+9. Mağaza açıklamasında ve görsellerde dongle gerektiğini açıkça belirtin; BYD ve DAB+ logolarını kullanmayın.
 
 ## D. Bilinen sınırlar
 

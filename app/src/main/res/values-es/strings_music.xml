@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">MÚSICA</string>
+    <string name="music_seg">MÚSICA</string>
+    <string name="menu_music_s">Reproduce música del dispositivo, SD y USB</string>
+    <string name="music_src_device">Este dispositivo</string>
+    <string name="music_all">Todo</string>
+    <string name="music_search">Buscar</string>
+    <string name="music_count">%1$d canciones</string>
+    <string name="music_perm">Permite el acceso para encontrar la música de este dispositivo.</string>
+    <string name="music_perm_btn">PERMITIR</string>
+    <string name="music_empty">No se encontró música. Usa + para añadir una carpeta, por ejemplo de una memoria USB.</string>
+    <string name="music_loading">Buscando música…</string>
+    <string name="music_none">Elige una canción de la lista</string>
+    <string name="music_rescan">Buscar de nuevo</string>
+    <string name="music_add_folder">Añadir carpeta</string>
+    <string name="music_remove_folder">¿Quitar «%1$s» de la lista de música? Tus archivos no se borran.</string>
+    <string name="music_failed">No se pudo reproducir esta música. Puede que falte el archivo o la unidad.</string>
+    <string name="music_songs">Canciones</string>
+    <string name="music_folders">Carpetas</string>
+    <string name="music_albums">Álbumes</string>
+    <string name="music_artists">Artistas</string>
+    <string name="music_sd">Tarjeta SD</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">Desconocido</string>
+    <string name="music_empty_src">No hay música aquí. Si la unidad está conectada pero vacía, elige su carpeta con +.</string>
+    <string name="eq_rock">Rock</string>
+    <string name="eq_pop">Pop</string>
+    <string name="eq_jazz">Jazz</string>
+    <string name="eq_classical">Clásica</string>
+    <string name="eq_electronic">Electrónica</string>
+</resources>

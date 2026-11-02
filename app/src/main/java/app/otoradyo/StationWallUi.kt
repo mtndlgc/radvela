@@ -173,7 +173,7 @@ internal class StationWallUi(h: MainActivity) : BaseUi(h) {
         if (s == null) return
         if (!tabChosen) {
             tabChosen = true
-            if (s.favorites.isEmpty()) tab = n.mode   // favori yoksa boş ekranla değil çalan bantla aç
+            if (s.favorites.isEmpty() && n.mode != "music") tab = n.mode   // favori yoksa boş ekranla değil çalan bantla aç
         }
         val list = stations(s)
         val next = tab + "|" + h.prefs.listStyle + "|" + Logos.version + "|" + list.joinToString(";") { it.key + it.title + it.current + it.fav }

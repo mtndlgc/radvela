@@ -1,10 +1,10 @@
 # Radvela
 
-**EN:** FM (stereo + RDS) and DAB / DAB+ radio for Android, driven directly by an RTL-SDR USB dongle (no separate "driver" app).
+**EN:** FM (stereo + RDS) and DAB / DAB+ radio for Android, driven directly by an RTL-SDR USB dongle (no separate "driver" app), plus a music player for the device, SD cards and USB drives.
 Built for car head units (BYD DiLink 3 and similar): large touch targets, preset buttons, rotation and split-screen support,
 steering-wheel media keys. Free software, GPL-2.0-or-later.
 
-**TR:** FM (stereo + RDS) ve DAB / DAB+ yayınlarını RTL-SDR USB dongle ile alan Android radyo uygulaması.
+**TR:** FM (stereo + RDS) ve DAB / DAB+ yayınlarını RTL-SDR USB dongle ile alan Android radyo uygulaması. Cihazdaki, SD karttaki ve USB bellekteki müzikleri de çalar.
 Araç multimedya ekranları (BYD DiLink 3 vb.) için tasarlandı: büyük dokunma hedefleri, hazır istasyon düğmeleri,
 ekran dönmesi ve bölünmüş ekran, direksiyon medya tuşları. Özgür yazılımdır, GPL-2.0 veya sonrası.
 
@@ -15,7 +15,8 @@ ekran dönmesi ve bölünmüş ekran, direksiyon medya tuşları. Özgür yazıl
 - **Arayüz**: beş tema (MENÜ > TEMA GALERİSİ): OEM Premium, Modern Digital (canlı ses spektrumu), Classic Analog (analog kadran; koyu metal veya ahşap zemin), Minimal Driving (sürüş için dev ad ve düğmeler), Station Wall (istasyon kartları). Hepsi `RadioUi` üzerinden `RadioState` okur; radyo motoruna bağımlı değildir. 5 renk şeması, büyük dokunma hedefleri, yatay/dikey/bölünmüş ekran.
 - **Kalite tanılaması**: DAB'da canlı SNR, FIC/ses çerçevesi hata sayaçları, sessizliğin nedeni (zayıf sinyal mi, çözücü mü); "KAZANÇ ARA" ile SNR'ye göre kazanç optimizasyonu.
 - ppm düzeltmesi, yazılım ses seviyesi, mono/vurgu ayarı, dongle takılınca otomatik başlama.
-- Ses kaydı (WAV), uyku zamanlayıcısı, ekolayzer, istasyon yedekleme. Uygulama ücretsizdir; tüm özellikler ve temalar açıktır, reklam ve uygulama içi satın alma yoktur.
+- **Müzik çalar** (`MusicLibrary`, `MusicPlayer`, `MusicPage`): MediaStore'daki dahili hafıza, SD kart ve USB birimlerini tarar; dizinlenmemiş bellekler için klasör seçilebilir. Ortam filtresi (Bu cihaz, SD kart, USB, seçilen klasörler), Şarkılar / Klasörler / Albümler / Sanatçılar görünümleri, arama, karışık çalma ve tekrar vardır. Müzik için dongle gerekmez. Çözümü cihaz yapar (MediaPlayer), uygulamaya çözücü eklenmez. Müzik başlayınca radyo durur, radyo başlayınca müzik durur.
+- Ses kaydı (WAV), uyku zamanlayıcısı, 10 ön ayarlı ekolayzer (radyo ve müzikte ortak), istasyon yedekleme. Uygulama ücretsizdir; tüm özellikler ve temalar açıktır, reklam ve uygulama içi satın alma yoktur.
 
 ## Derleme
 AGP 9.2, Gradle 9.4, NDK 27 ve CMake 3.22.1. Tüm yerel kod kaynaktan derlenir, hazır kitaplık yoktur; 16 KB sayfa boyutu desteklenir. Yalnız `arm64-v8a` üretilir.
@@ -41,6 +42,7 @@ build-host/native-tests/test_dab 12345
 - DL+ ve duyurular yok.
 - Araç içi (BYD DiLink) testi henüz yapılmadı; USB ana makine desteği ve Android sürümü araca göre değişebilir.
 - Yalnız Band III ve DAB mod 1 desteklenir.
+- Müzik çalar SD kart ve USB bellekle henüz denenmedi. Android SD/USB ayrımını vermediği için ayrım birimin adından yapılır; bazı bellekler yanlış grupta görünebilir.
 
 ## BYD DiLink (Song Plus vb.) kurulumu
 

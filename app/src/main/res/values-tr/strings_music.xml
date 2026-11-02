@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">MÜZİK</string>
+    <string name="music_seg">MÜZİK</string>
+    <string name="menu_music_s">Cihaz, SD kart ve USB\'deki müzikleri çalar</string>
+    <string name="music_src_device">Bu cihaz</string>
+    <string name="music_all">Tümü</string>
+    <string name="music_search">Ara</string>
+    <string name="music_count">%1$d şarkı</string>
+    <string name="music_perm">Bu cihazdaki müzikleri bulmak için erişime izin ver.</string>
+    <string name="music_perm_btn">İZİN VER</string>
+    <string name="music_empty">Müzik bulunamadı. Örneğin USB bellekten klasör eklemek için + düğmesini kullan.</string>
+    <string name="music_loading">Müzikler aranıyor…</string>
+    <string name="music_none">Listeden bir şarkı seç</string>
+    <string name="music_rescan">Yeniden tara</string>
+    <string name="music_add_folder">Klasör ekle</string>
+    <string name="music_remove_folder">“%1$s” müzik listesinden kaldırılsın mı? Dosyaların yerinde kalır.</string>
+    <string name="music_failed">Bu müzik çalınamadı. Dosya ya da bellek çıkarılmış olabilir.</string>
+    <string name="music_songs">Şarkılar</string>
+    <string name="music_folders">Klasörler</string>
+    <string name="music_albums">Albümler</string>
+    <string name="music_artists">Sanatçılar</string>
+    <string name="music_sd">SD kart</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">Bilinmiyor</string>
+    <string name="music_empty_src">Burada müzik yok. Bellek takılı ama boş görünüyorsa + ile klasörünü seç.</string>
+    <string name="eq_rock">Rock</string>
+    <string name="eq_pop">Pop</string>
+    <string name="eq_jazz">Caz</string>
+    <string name="eq_classical">Klasik</string>
+    <string name="eq_electronic">Elektronik</string>
+</resources>

@@ -85,7 +85,7 @@
     <string name="diag_mode">الوضع: %1$s</string>
     <string name="diag_fm">إشارة FM: %1$.0f dB، ستيريو=%2$b، RDS=%3$b</string>
     <string name="diag_dab">DAB: SNR %1$.1f dB، المزامنة=%2$d، %3$s\nأخطاء FIC=%4$d، CRC الصوت: سليم=%5$d خطأ=%6$d، أخطاء RS=%7$d</string>
-    <string name="about_text">مستقبل FM (ستيريو، RDS) وDAB/DAB+. يتصل دونغل RTL-SDR مباشرةً عبر USB.\n\nGPL-2.0 أو أحدث. نواة DAB: welle.io (GPL). MP2: mpg123.\nالتفاصيل: NOTICE.md\nالشعارات: radio-browser.info</string>
+    <string name="about_text">مستقبل FM (ستيريو، RDS) وDAB/DAB+ مع مشغّل موسيقى. يتصل دونغل RTL-SDR مباشرةً عبر USB.\n\nGPL-2.0 أو أحدث. نواة DAB: welle.io (GPL). MP2: mpg123.\nالتفاصيل: NOTICE.md\nالشعارات: radio-browser.info</string>
     <string name="msg_dab_list_empty">قائمة DAB+ فارغة: القائمة &gt; بحث تلقائي (DAB+)</string>
     <string name="empty_fav">لا توجد محطات مفضلة.\nاضغط مطولًا على محطة في القائمة لإضافتها إلى المفضلة.</string>
     <string name="empty_list">القائمة فارغة.\nاعثر على المحطات عبر البحث التلقائي.</string>

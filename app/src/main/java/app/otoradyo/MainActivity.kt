@@ -53,7 +53,7 @@ import kotlin.math.roundToInt
  */
 class MainActivity : Activity(), RadioService.Ui {
 
-    private enum class Page { MAIN, LIST, MENU }
+    private enum class Page { MAIN, LIST, MENU, MUSIC }
 
     private val schemes = Pal.SCHEMES
     private val schemeIds = intArrayOf(R.string.color_red, R.string.color_amber, R.string.color_green, R.string.color_blue, R.string.color_cyan)
@@ -92,6 +92,8 @@ class MainActivity : Activity(), RadioService.Ui {
         @Volatile var reopenMenu = false
         const val REQ_BACKUP = 11
         const val REQ_RESTORE = 12
+        const val REQ_MUSIC_FOLDER = 13
+        const val REQ_MUSIC_PERM = 14
     }
     internal var service: RadioService? = null
     private var bound = false
@@ -160,12 +162,14 @@ class MainActivity : Activity(), RadioService.Ui {
     private lateinit var mainPage: LinearLayout
     private lateinit var listPage: LinearLayout
     private lateinit var menuPage: LinearLayout
+    private lateinit var musicPage: MusicPage
     private var sheetView: View? = null
     private var sheetRefresh: (() -> Unit)? = null
 
     // Ana sayfa
     private lateinit var segFm: TextView
     private lateinit var segDab: TextView
+    private lateinit var segMusic: TextView
     private lateinit var statusDot: View
     private lateinit var statusText: TextView
     private lateinit var chipRow: LinearLayout
@@ -464,6 +468,7 @@ class MainActivity : Activity(), RadioService.Ui {
     private fun handleBack() {
         when {
             sheetView != null -> closeSheet()
+            page == Page.MUSIC && musicPage.leaveGroup() -> {}
             page != Page.MAIN -> showPage(Page.MAIN)
             else -> finish()
         }
@@ -481,10 +486,10 @@ class MainActivity : Activity(), RadioService.Ui {
                     KeyEvent.KEYCODE_MEDIA_NEXT, KeyEvent.KEYCODE_CHANNEL_UP -> { s.seek(+1); return true }
                     KeyEvent.KEYCODE_MEDIA_PREVIOUS, KeyEvent.KEYCODE_CHANNEL_DOWN -> { s.seek(-1); return true }
                     KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE, KeyEvent.KEYCODE_HEADSETHOOK -> { s.togglePlay(); return true }
-                    KeyEvent.KEYCODE_MEDIA_PLAY -> { if (!s.state.playing) s.resume(); return true }
-                    KeyEvent.KEYCODE_MEDIA_PAUSE, KeyEvent.KEYCODE_MEDIA_STOP -> { if (s.state.playing) s.stopPlayback(); return true }
-                    KeyEvent.KEYCODE_MEDIA_FAST_FORWARD -> { if (uiModeNow() == "fm") s.stepFm(+1) else s.seek(+1); return true }
-                    KeyEvent.KEYCODE_MEDIA_REWIND -> { if (uiModeNow() == "fm") s.stepFm(-1) else s.seek(-1); return true }
+                    KeyEvent.KEYCODE_MEDIA_PLAY -> { s.playAny(); return true }
+                    KeyEvent.KEYCODE_MEDIA_PAUSE, KeyEvent.KEYCODE_MEDIA_STOP -> { s.pauseAny(); return true }
+                    KeyEvent.KEYCODE_MEDIA_FAST_FORWARD -> { if (s.music.active) s.music.seekBy(+15000) else if (uiModeNow() == "fm") s.stepFm(+1) else s.seek(+1); return true }
+                    KeyEvent.KEYCODE_MEDIA_REWIND -> { if (s.music.active) s.music.seekBy(-15000) else if (uiModeNow() == "fm") s.stepFm(-1) else s.seek(-1); return true }
                 }
             }
         }
@@ -534,10 +539,12 @@ class MainActivity : Activity(), RadioService.Ui {
         buildMain()
         buildList()
         buildMenu()
+        musicPage = MusicPage(this)
         mainPage.layoutDirection = View.LAYOUT_DIRECTION_LTR   // radyo ekranı (kadran, frekans) Arapça'da da aynı kalır
         root.addView(mainPage, FrameLayout.LayoutParams(-1, -1))
         root.addView(listPage, FrameLayout.LayoutParams(-1, -1))
         root.addView(menuPage, FrameLayout.LayoutParams(-1, -1))
+        root.addView(musicPage.view, FrameLayout.LayoutParams(-1, -1))
         setContentView(root)
         showPage(page)
     }
@@ -547,6 +554,7 @@ class MainActivity : Activity(), RadioService.Ui {
         mainPage.visibility = if (p == Page.MAIN) View.VISIBLE else View.GONE
         listPage.visibility = if (p == Page.LIST) View.VISIBLE else View.GONE
         menuPage.visibility = if (p == Page.MENU) View.VISIBLE else View.GONE
+        musicPage.view.visibility = if (p == Page.MUSIC) View.VISIBLE else View.GONE
         renderAll()
     }
 
@@ -583,7 +591,7 @@ class MainActivity : Activity(), RadioService.Ui {
         }
     }
 
-    private fun backRow(title: String, vararg extra: View): LinearLayout = LinearLayout(this).apply {
+    internal fun backRow(title: String, vararg extra: View): LinearLayout = LinearLayout(this).apply {
         orientation = LinearLayout.HORIZONTAL
         gravity = Gravity.CENTER_VERTICAL
         val back = Btn(true, Glyph.BACK, null, m(3.6f), 0f) { handleBack() }
@@ -633,12 +641,14 @@ class MainActivity : Activity(), RadioService.Ui {
         // ---- Üst çubuk (ahşap üstünde): mod seçici, durum, başlık, saat, menü
         segFm = segment("FM") { selectMode("fm") }
         segDab = segment("DAB+") { selectMode("dab") }
+        segMusic = segment(getString(R.string.music_seg)) { selectMode("music") }
         val seg = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             background = rr(0x96000000.toInt(), m(4.6f), 0x28FFFFFF)
             setPadding(m(0.5f), m(0.5f), m(0.5f), m(0.5f))
             addView(segFm, lp(-2, m(6.0f)))
             addView(segDab, lp(-2, m(6.0f)))
+            addView(segMusic, lp(-2, m(6.0f)))
         }
         statusDot = View(this)
         statusText = txt("", tx(2.2f), Pal.WOOD_DIM).apply {
@@ -916,6 +926,7 @@ class MainActivity : Activity(), RadioService.Ui {
         val rec = s?.state?.recording == true
         return listOf(
             Tile(Glyph.LIST, getString(R.string.menu_list_t), getString(R.string.menu_list_s)) { listKind = uiModeNow(); showPage(Page.LIST) },
+            Tile(Glyph.MUSIC, getString(R.string.music_title), getString(R.string.menu_music_s)) { showMusic() },
             Tile(Glyph.SEARCH, getString(R.string.menu_scan_fm_t), getString(R.string.menu_scan_fm_s)) { showPage(Page.MAIN); service?.scanFm() },
             Tile(Glyph.SEARCH, getString(R.string.menu_scan_dab_t), getString(R.string.menu_scan_dab_s)) { showPage(Page.MAIN); service?.scanDab() },
             Tile(Glyph.SLIDERS, getString(R.string.menu_manual_t), getString(R.string.menu_manual_s)) { showManualTune() },
@@ -1245,7 +1256,8 @@ class MainActivity : Activity(), RadioService.Ui {
 
     // ------------------------------------------------------------------ Kayıt, yardım, gizlilik
 
-    private val eqNames = intArrayOf(R.string.eq_flat, R.string.eq_bass, R.string.eq_vocal, R.string.eq_treble, R.string.eq_loud)
+    private val eqNames = intArrayOf(R.string.eq_flat, R.string.eq_bass, R.string.eq_vocal, R.string.eq_treble, R.string.eq_loud,
+        R.string.eq_rock, R.string.eq_pop, R.string.eq_jazz, R.string.eq_classical, R.string.eq_electronic)
 
     internal fun toggleRec() {
         service?.toggleRecording()
@@ -1296,9 +1308,20 @@ class MainActivity : Activity(), RadioService.Ui {
         }
     }
 
+    /** Çalan müzik, temaların radyo için kullandığı alanlara yerleşir. */
+    private fun musicNow(s: RadioService): Now {
+        val m = s.music
+        val sec = m.positionMs / 1000
+        val st = s.state
+        return Now("music", m.title, String.format(Locale.US, "%d:%02d", sec / 60, sec % 60), getString(R.string.music_seg), m.artist, m.album,
+            listOf(getString(R.string.music_seg) to false, (m.current?.source ?: "") to false), 0f, m.playing, false, "",
+            "", m.art, false, st.muted, false, "", 0, st.message, st.usb, st.connected)
+    }
+
     /** Radyo durumunu temaların gördüğü tek veri nesnesine çevirir; desteklenmeyen bilgi boş kalır. */
     private fun nowOf(s: RadioService?, mode: String): Now {
         val st = s?.state
+        if (s != null && s.music.active && !s.state.scanning) return musicNow(s)
         val scanFm = st != null && st.scanning && st.scanKind == "fm" && st.scanHz > 0
         val scanDab = st != null && st.scanning && st.scanKind == "dab" && st.scanText.isNotEmpty()
         val fmHz = when { scanFm -> st!!.scanHz; st?.mode == "fm" -> st.fmHz; else -> prefs.lastFmHz }
@@ -1433,7 +1456,7 @@ class MainActivity : Activity(), RadioService.Ui {
         }) { i -> s.setSleepTimer(mins[i]) }
     }
 
-    private fun showEq() {
+    internal fun showEq() {
         val s = service ?: return
         choiceSheet(getString(R.string.eq_t), eqNames.mapIndexed { i, id -> getString(id) to (i == prefs.eqPreset) }) { i -> s.setEqPreset(i) }
     }
@@ -1457,6 +1480,10 @@ class MainActivity : Activity(), RadioService.Ui {
         if (resultCode != RESULT_OK || uri == null || s == null) return
         try {
             when (requestCode) {
+                REQ_MUSIC_FOLDER -> {
+                    contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    s.addMusicFolder(uri.toString())
+                }
                 REQ_BACKUP -> {
                     contentResolver.openOutputStream(uri)!!.use { it.write(s.exportStations().toByteArray()) }
                     s.showMessage(getString(R.string.msg_backup_ok))
@@ -1532,8 +1559,36 @@ class MainActivity : Activity(), RadioService.Ui {
         return if (s != null && s.state.mode != "idle") s.state.mode else prefs.lastMode
     }
 
+    internal fun showMusic() {
+        showPage(Page.MUSIC)
+        service?.reloadMusic()
+        if (!musicPage.hasPermission()) requestMusicPermission()
+    }
+
+    internal fun requestMusicPermission() = requestPermissions(arrayOf(musicPermission()), REQ_MUSIC_PERM)
+
+    private fun musicPermission() = if (Build.VERSION.SDK_INT >= 33) Manifest.permission.READ_MEDIA_AUDIO else Manifest.permission.READ_EXTERNAL_STORAGE
+
+    internal fun renderMusic() = musicPage.render(service)
+
+    internal fun pickMusicFolder() {
+        val i = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
+        @Suppress("DEPRECATION") startActivityForResult(i, REQ_MUSIC_FOLDER)
+    }
+
+    internal fun confirmRemoveMusicFolder(name: String) {
+        openSheet(getString(R.string.music_title), txt(fmt(R.string.music_remove_folder, name), tx(2.8f), Pal.TEXT),
+            Act(getString(R.string.act_cancel)) {}, Act(getString(R.string.act_ok), primary = true) { service?.removeMusicFolder(name) })
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQ_MUSIC_PERM) service?.reloadMusic()
+    }
+
     internal fun selectMode(mode: String) {
         val s = service ?: return
+        if (mode == "music") { showMusic(); return }
         if (s.state.connected && !s.state.scanning && s.state.mode != mode) {
             if (mode == "fm") s.playFm(s.prefs.lastFmHz)
             else (s.dabList.firstOrNull { it.key == s.prefs.lastDabKey } ?: s.dabList.firstOrNull())?.let { s.playDab(it) }
@@ -1755,7 +1810,8 @@ class MainActivity : Activity(), RadioService.Ui {
     }
 
     private fun setNowLogo(name: String) {
-        val lg = service?.state?.slide ?: logoFor(name.trim())
+        val music = service?.music?.takeIf { it.active }
+        val lg = if (music != null) music.art else service?.state?.slide ?: logoFor(name.trim())
         nowLogo.logo = lg
         val vis = if (lg != null) View.VISIBLE else View.GONE
         if (nowLogo.visibility != vis) nowLogo.visibility = vis
@@ -1767,14 +1823,16 @@ class MainActivity : Activity(), RadioService.Ui {
         // Tarama sürerken göstergeler taranan banda geçer (FM'deyken DAB+ taransa da kadran DAB kanallarını gösterir)
         val mode = s?.state?.takeIf { it.scanning }?.scanKind ?: uiModeNow()
         s?.spectrumOn = customUi?.wantsSpectrum == true && prefs.animations && page == Page.MAIN
+        if (page == Page.MUSIC) musicPage.render(s)
         customUi?.let { ui ->
             if (page == Page.LIST && s != null) renderList(s)
             if (page == Page.MENU) fillMenu()
             ui.render(s, nowOf(s, mode))
             return
         }
-        styleSeg(segFm, mode == "fm")
-        styleSeg(segDab, mode == "dab")
+        val musicSeg = s?.music?.active == true
+        styleSeg(segFm, mode == "fm" && !musicSeg)
+        styleSeg(segDab, mode == "dab" && !musicSeg)
         rowFm.visibility = if (mode == "fm") View.VISIBLE else View.GONE
         rowDab.visibility = if (mode == "dab") View.VISIBLE else View.GONE
         tuner.visibility = if (mode == "fm") View.VISIBLE else View.GONE
@@ -1807,7 +1865,9 @@ class MainActivity : Activity(), RadioService.Ui {
         msgText.visibility = if (st.message.isEmpty()) View.GONE else View.VISIBLE
 
         // Düğmeler
-        btnPlay.glyph(if (st.playing) Glyph.PAUSE else Glyph.PLAY, true, Pal.FG)
+        val musicOn = s.music.active
+        styleSeg(segMusic, musicOn)
+        btnPlay.glyph(if (st.playing || s.music.playing) Glyph.PAUSE else Glyph.PLAY, true, Pal.FG)
         val key = s.currentKey()
         val isFav = key.isNotEmpty() && key in s.favorites
         btnFav.glyph(if (isFav) Glyph.STAR else Glyph.STAR_O, isFav, Pal.FG)
@@ -1862,12 +1922,17 @@ class MainActivity : Activity(), RadioService.Ui {
                     tuner.markers = list.map { it.freqHz }
                     tuner.favs = list.filter { it.key in s.favorites }.map { it.freqHz }.toSet()
                 }
-                nameText.put("Radvela")
+                nameText.put(if (musicOn) s.music.title else "Radvela")
                 setNowLogo("")
-                subText.put(getString(if (st.connected) R.string.sub_idle_ready else R.string.sub_idle_noconn))
+                subText.put(if (musicOn) s.music.artist else getString(if (st.connected) R.string.sub_idle_ready else R.string.sub_idle_noconn))
                 rtText.put("")
                 signal.level = 0f
-                setChips(listOf((if (mode == "dab") "DAB+" else "FM") to false, getString(R.string.chip_off) to false))
+                setChips(if (musicOn) listOf(getString(R.string.music_seg) to false, (s.music.current?.source ?: "") to false)
+                else listOf((if (mode == "dab") "DAB+" else "FM") to false, getString(R.string.chip_off) to false))
+                if (musicOn) {
+                    val sec = s.music.positionMs / 1000
+                    freqText.put(freqSpan(String.format(Locale.US, "%d:%02d", sec / 60, sec % 60), ""))
+                }
             }
         }
 

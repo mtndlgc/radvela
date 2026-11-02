@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">الموسيقى</string>
+    <string name="music_seg">موسيقى</string>
+    <string name="menu_music_s">يشغّل الموسيقى من الجهاز وبطاقة SD وUSB</string>
+    <string name="music_src_device">هذا الجهاز</string>
+    <string name="music_all">الكل</string>
+    <string name="music_search">بحث</string>
+    <string name="music_count">عدد الأغاني: %1$d</string>
+    <string name="music_perm">اسمح بالوصول للعثور على الموسيقى في هذا الجهاز.</string>
+    <string name="music_perm_btn">سماح</string>
+    <string name="music_empty">لم يتم العثور على موسيقى. استخدم + لإضافة مجلد، مثلًا من ذاكرة USB.</string>
+    <string name="music_loading">جارٍ البحث عن الموسيقى…</string>
+    <string name="music_none">اختر أغنية من القائمة</string>
+    <string name="music_rescan">البحث مرة أخرى</string>
+    <string name="music_add_folder">إضافة مجلد</string>
+    <string name="music_remove_folder">هل تريد إزالة «%1$s» من قائمة الموسيقى؟ تبقى ملفاتك في مكانها.</string>
+    <string name="music_failed">تعذّر تشغيل هذه الموسيقى. ربما الملف أو وحدة التخزين غير موجودة.</string>
+    <string name="music_songs">الأغاني</string>
+    <string name="music_folders">المجلدات</string>
+    <string name="music_albums">الألبومات</string>
+    <string name="music_artists">الفنانون</string>
+    <string name="music_sd">بطاقة SD</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">غير معروف</string>
+    <string name="music_empty_src">لا توجد موسيقى هنا. إذا كانت وحدة التخزين موصولة لكنها فارغة، فاختر مجلدها باستخدام +.</string>
+    <string name="eq_rock">روك</string>
+    <string name="eq_pop">بوب</string>
+    <string name="eq_jazz">جاز</string>
+    <string name="eq_classical">كلاسيكي</string>
+    <string name="eq_electronic">إلكتروني</string>
+</resources>

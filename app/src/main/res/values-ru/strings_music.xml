@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">МУЗЫКА</string>
+    <string name="music_seg">МУЗЫКА</string>
+    <string name="menu_music_s">Воспроизводит музыку с устройства, SD и USB</string>
+    <string name="music_src_device">Это устройство</string>
+    <string name="music_all">Все</string>
+    <string name="music_search">Поиск</string>
+    <string name="music_count">Песен: %1$d</string>
+    <string name="music_perm">Разрешите доступ, чтобы найти музыку на этом устройстве.</string>
+    <string name="music_perm_btn">РАЗРЕШИТЬ</string>
+    <string name="music_empty">Музыка не найдена. Нажмите +, чтобы добавить папку, например на USB-накопителе.</string>
+    <string name="music_loading">Поиск музыки…</string>
+    <string name="music_none">Выберите песню из списка</string>
+    <string name="music_rescan">Искать снова</string>
+    <string name="music_add_folder">Добавить папку</string>
+    <string name="music_remove_folder">Убрать «%1$s» из списка музыки? Файлы останутся на месте.</string>
+    <string name="music_failed">Не удалось воспроизвести музыку. Возможно, файл или накопитель недоступен.</string>
+    <string name="music_songs">Песни</string>
+    <string name="music_folders">Папки</string>
+    <string name="music_albums">Альбомы</string>
+    <string name="music_artists">Исполнители</string>
+    <string name="music_sd">SD-карта</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">Неизвестно</string>
+    <string name="music_empty_src">Здесь нет музыки. Если накопитель подключён, но пуст, выберите его папку кнопкой +.</string>
+    <string name="eq_rock">Рок</string>
+    <string name="eq_pop">Поп</string>
+    <string name="eq_jazz">Джаз</string>
+    <string name="eq_classical">Классика</string>
+    <string name="eq_electronic">Электроника</string>
+</resources>

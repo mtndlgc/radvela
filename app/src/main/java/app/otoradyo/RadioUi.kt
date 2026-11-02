@@ -94,10 +94,12 @@ internal abstract class BaseUi(protected val h: MainActivity) : RadioUi {
         }
         private val fm = seg("FM", "fm")
         private val dab = seg("DAB+", "dab")
+        private val music = seg(h.getString(R.string.music_seg), "music")
         val view = LinearLayout(ctx).apply {
             orientation = LinearLayout.HORIZONTAL
             addView(fm, h.lp(-2, -1))
             addView(dab, h.lp(-2, -1))
+            addView(music, h.lp(-2, -1))
         }
         private var last = ""
 
@@ -106,8 +108,10 @@ internal abstract class BaseUi(protected val h: MainActivity) : RadioUi {
             last = mode
             fm.background = if (mode == "fm") onBg?.constantState?.newDrawable()?.mutate() else null
             dab.background = if (mode == "dab") onBg?.constantState?.newDrawable()?.mutate() else null
+            music.background = if (mode == "music") onBg?.constantState?.newDrawable()?.mutate() else null
             fm.setTextColor(if (mode == "fm") onFg else offFg)
             dab.setTextColor(if (mode == "dab") onFg else offFg)
+            music.setTextColor(if (mode == "music") onFg else offFg)
         }
     }
 

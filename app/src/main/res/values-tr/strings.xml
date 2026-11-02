@@ -85,7 +85,7 @@
     <string name="diag_mode">Kip: %1$s</string>
     <string name="diag_fm">FM sinyal: %1$.0f dB, stereo=%2$b, RDS=%3$b</string>
     <string name="diag_dab">DAB: SNR %1$.1f dB, senkron=%2$d, %3$s\nFIC hata=%4$d, ses CRC tamam=%5$d hata=%6$d, RS hata=%7$d</string>
-    <string name="about_text">FM (stereo, RDS) ve DAB/DAB+ alıcısı. RTL-SDR dongle doğrudan USB ile bağlanır.\n\nGPL-2.0 veya sonrası. DAB çekirdeği: welle.io (GPL). MP2: mpg123.\nAyrıntı: NOTICE.md\nLogolar: radio-browser.info</string>
+    <string name="about_text">FM (stereo, RDS) ve DAB/DAB+ alıcısı ve müzik çalar. RTL-SDR dongle doğrudan USB ile bağlanır.\n\nGPL-2.0 veya sonrası. DAB çekirdeği: welle.io (GPL). MP2: mpg123.\nAyrıntı: NOTICE.md\nLogolar: radio-browser.info</string>
     <string name="msg_dab_list_empty">DAB+ listesi boş: MENÜ &gt; OTOMATİK ARAMA (DAB+)</string>
     <string name="empty_fav">Favori istasyon yok.\nListede bir istasyona uzun basarak favoriye ekleyin.</string>
     <string name="empty_list">Liste boş.\nOTOMATİK ARAMA ile istasyonları bulun.</string>

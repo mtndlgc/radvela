@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">MUSIQUE</string>
+    <string name="music_seg">MUSIQUE</string>
+    <string name="menu_music_s">Lit la musique de l\'appareil, de la carte SD et de l\'USB</string>
+    <string name="music_src_device">Cet appareil</string>
+    <string name="music_all">Tout</string>
+    <string name="music_search">Rechercher</string>
+    <string name="music_count">%1$d titres</string>
+    <string name="music_perm">Autorisez l\'accès pour trouver la musique de cet appareil.</string>
+    <string name="music_perm_btn">AUTORISER</string>
+    <string name="music_empty">Aucune musique trouvée. Utilisez + pour ajouter un dossier, par exemple sur une clé USB.</string>
+    <string name="music_loading">Recherche de musique…</string>
+    <string name="music_none">Choisissez un titre dans la liste</string>
+    <string name="music_rescan">Rechercher à nouveau</string>
+    <string name="music_add_folder">Ajouter un dossier</string>
+    <string name="music_remove_folder">Retirer « %1$s » de la liste de musique ? Vos fichiers restent en place.</string>
+    <string name="music_failed">Impossible de lire cette musique. Le fichier ou le support est peut-être absent.</string>
+    <string name="music_songs">Titres</string>
+    <string name="music_folders">Dossiers</string>
+    <string name="music_albums">Albums</string>
+    <string name="music_artists">Artistes</string>
+    <string name="music_sd">Carte SD</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">Inconnu</string>
+    <string name="music_empty_src">Aucune musique ici. Si le support est branché mais vide, choisissez son dossier avec +.</string>
+    <string name="eq_rock">Rock</string>
+    <string name="eq_pop">Pop</string>
+    <string name="eq_jazz">Jazz</string>
+    <string name="eq_classical">Classique</string>
+    <string name="eq_electronic">Électronique</string>
+</resources>

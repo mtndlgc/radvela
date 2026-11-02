@@ -102,7 +102,7 @@ object Pal {
  * Çizimle yapılmış simgeler. Yazı tipi karakterlerine (▶ ★ ● gibi) güvenmeyiz: araç ekranlarının
  * yazı tiplerinde bu karakterler eksik olabilir ve kutucuk olarak görünür.
  */
-enum class Glyph { PLAY, PAUSE, PREV, NEXT, STAR, STAR_O, LIST, MENU, REC, STOP, MINUS, PLUS, BACK, SEARCH, CLOSE, SLIDERS, PULSE, INFO, TRASH, PALETTE, CHECK, GLOBE, CONTRAST, VOLUME, MUTED }
+enum class Glyph { PLAY, PAUSE, PREV, NEXT, STAR, STAR_O, LIST, MENU, REC, STOP, MINUS, PLUS, BACK, SEARCH, CLOSE, SLIDERS, PULSE, INFO, TRASH, PALETTE, CHECK, GLOBE, CONTRAST, VOLUME, MUTED, MUSIC, SHUFFLE, REPEAT, REPEAT_ONE }
 
 /**
  * Simgelerin 24x24 birimlik uzayda çizimi (GlyphView ve ChromeButton ortak kullanır).
@@ -236,6 +236,28 @@ internal object GlyphPainter {
             Glyph.CHECK -> {
                 path.reset(); path.moveTo(5f, 12.5f); path.lineTo(10f, 17.5f); path.lineTo(19f, 7f)
                 c.drawPath(path, line)
+            }
+            Glyph.MUSIC -> {
+                c.drawLine(9.5f, 17f, 9.5f, 6f, line)
+                c.drawLine(19f, 15f, 19f, 4f, line)
+                c.drawLine(9.5f, 6f, 19f, 4f, line)
+                c.drawCircle(6.8f, 17.2f, 2.8f, fill)
+                c.drawCircle(16.3f, 15.2f, 2.8f, fill)
+            }
+            Glyph.SHUFFLE -> {
+                path.reset(); path.moveTo(3.5f, 7f); path.lineTo(7.5f, 7f); path.lineTo(16f, 17f); path.lineTo(20f, 17f)
+                path.moveTo(3.5f, 17f); path.lineTo(7.5f, 17f); path.lineTo(16f, 7f); path.lineTo(20f, 7f)
+                path.moveTo(17.5f, 4.2f); path.lineTo(20.3f, 7f); path.lineTo(17.5f, 9.8f)
+                path.moveTo(17.5f, 14.2f); path.lineTo(20.3f, 17f); path.lineTo(17.5f, 19.8f)
+                c.drawPath(path, line)
+            }
+            Glyph.REPEAT, Glyph.REPEAT_ONE -> {
+                path.reset(); path.moveTo(5f, 11f); path.lineTo(5f, 7.5f); path.lineTo(19f, 7.5f)
+                path.moveTo(16.2f, 4.7f); path.lineTo(19f, 7.5f); path.lineTo(16.2f, 10.3f)
+                path.moveTo(19f, 13f); path.lineTo(19f, 16.5f); path.lineTo(5f, 16.5f)
+                path.moveTo(7.8f, 13.7f); path.lineTo(5f, 16.5f); path.lineTo(7.8f, 19.3f)
+                c.drawPath(path, line)
+                if (glyph == Glyph.REPEAT_ONE) c.drawLine(12f, 10f, 12f, 14f, line)
             }
         }
     }

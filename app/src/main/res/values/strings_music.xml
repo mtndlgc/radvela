@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music_title">MUSIC</string>
+    <string name="music_seg">MUSIC</string>
+    <string name="menu_music_s">Plays music from device, SD card and USB</string>
+    <string name="music_src_device">This device</string>
+    <string name="music_all">All</string>
+    <string name="music_search">Search</string>
+    <string name="music_count">%1$d songs</string>
+    <string name="music_perm">Allow access to find the music on this device.</string>
+    <string name="music_perm_btn">ALLOW</string>
+    <string name="music_empty">No music found. Use + to add a folder, for example on a USB drive.</string>
+    <string name="music_loading">Looking for music…</string>
+    <string name="music_none">Pick a song from the list</string>
+    <string name="music_rescan">Scan again</string>
+    <string name="music_add_folder">Add folder</string>
+    <string name="music_remove_folder">Remove “%1$s” from the music list? Your files stay where they are.</string>
+    <string name="music_failed">This music could not be played. The file or the drive may be missing.</string>
+    <string name="music_songs">Songs</string>
+    <string name="music_folders">Folders</string>
+    <string name="music_albums">Albums</string>
+    <string name="music_artists">Artists</string>
+    <string name="music_sd">SD card</string>
+    <string name="music_usb">USB</string>
+    <string name="music_unknown">Unknown</string>
+    <string name="music_empty_src">No music here. If the drive is connected but empty, use + to pick its folder.</string>
+    <string name="eq_rock">Rock</string>
+    <string name="eq_pop">Pop</string>
+    <string name="eq_jazz">Jazz</string>
+    <string name="eq_classical">Classical</string>
+    <string name="eq_electronic">Electronic</string>
+</resources>

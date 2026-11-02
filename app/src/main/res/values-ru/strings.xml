@@ -85,7 +85,7 @@
     <string name="diag_mode">Режим: %1$s</string>
     <string name="diag_fm">Сигнал FM: %1$.0f dB, стерео=%2$b, RDS=%3$b</string>
     <string name="diag_dab">DAB: SNR %1$.1f dB, синхр.=%2$d, %3$s\nОшибки FIC=%4$d, CRC звука: ок=%5$d ош.=%6$d, ошибки RS=%7$d</string>
-    <string name="about_text">Приёмник FM (стерео, RDS) и DAB/DAB+. Донгл RTL-SDR подключается напрямую по USB.\n\nGPL-2.0 или новее. Ядро DAB: welle.io (GPL). MP2: mpg123.\nПодробности: NOTICE.md\nЛоготипы: radio-browser.info</string>
+    <string name="about_text">Приёмник FM (стерео, RDS) и DAB/DAB+ с музыкальным плеером. Донгл RTL-SDR подключается напрямую по USB.\n\nGPL-2.0 или новее. Ядро DAB: welle.io (GPL). MP2: mpg123.\nПодробности: NOTICE.md\nЛоготипы: radio-browser.info</string>
     <string name="msg_dab_list_empty">Список DAB+ пуст: МЕНЮ &gt; АВТОПОИСК (DAB+)</string>
     <string name="empty_fav">Нет избранных станций.\nУдерживайте станцию в списке, чтобы добавить её в избранное.</string>
     <string name="empty_list">Список пуст.\nНайдите станции с помощью АВТОПОИСКА.</string>

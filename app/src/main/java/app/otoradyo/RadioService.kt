@@ -178,6 +178,17 @@ class RadioService : Service(), NativeRadio.Listener {
 
     // Kayıt ve ses seviyesi (çekirdek iş parçacığından okunur)
     private val recorder by lazy { Recorder(this) }
+    lateinit var music: MusicPlayer
+        private set
+    var musicTracks: List<Track> = emptyList()
+        private set
+    var musicVersion = 0
+        private set
+    var musicLoading = false
+        private set
+    private var musicFolderNames = emptyMap<String, String>()   // görünen ad -> belge ağacı adresi
+    private var mountReceiver: BroadcastReceiver? = null
+    private var musicScanToken = 0
     @Volatile private var audioGain = 1.0f
     @Volatile private var duck = false
     @Volatile private var recordRequested = false
@@ -208,6 +219,9 @@ class RadioService : Service(), NativeRadio.Listener {
         state.mode = "idle"
         audioGain = prefs.audioGainPct / 100f
         audio.setEqPreset(prefs.eqPreset)
+        music = MusicPlayer(this, { onMusicChange() }, { main.post { showMessage(str(R.string.music_failed)) } })
+        music.setEqPreset(prefs.eqPreset)
+        applyMusicVolume()
 
         radio = NativeRadio(this)
         usbHelper = UsbHelper(this)
@@ -217,6 +231,7 @@ class RadioService : Service(), NativeRadio.Listener {
 
         setupSession()
         registerDetach()
+        registerMounts()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -243,6 +258,10 @@ class RadioService : Service(), NativeRadio.Listener {
         detachReceiver?.let {
             try { unregisterReceiver(it) } catch (_: IllegalArgumentException) {}
         }
+        mountReceiver?.let {
+            try { unregisterReceiver(it) } catch (_: IllegalArgumentException) {}
+        }
+        music.release()
         usbHelper.unregister()
         recorder.stop()
         releaseWakeLock()
@@ -391,7 +410,7 @@ class RadioService : Service(), NativeRadio.Listener {
                 state.connected = true
                 setUsb(R.string.usb_connected)
                 changed()
-                if (prefs.autoPlay) resume()
+                if (prefs.autoPlay && !music.active) resume()
             }
         }
     }
@@ -402,6 +421,7 @@ class RadioService : Service(), NativeRadio.Listener {
         abortOptimize()
         Log.i("OtoRadyo", "playFm $freqHz bagli=${state.connected}")
         if (!state.connected) { connectUsb(); return }
+        music.stop()
         startForegroundNow()
         requestFocus()
         state.mode = "fm"
@@ -422,6 +442,7 @@ class RadioService : Service(), NativeRadio.Listener {
         abortOptimize()
         Log.i("OtoRadyo", "playDab ${s.channel} ${s.label} sid=${s.sid} bagli=${state.connected}")
         if (!state.connected) { connectUsb(); return }
+        music.stop()
         startForegroundNow()
         requestFocus()
         state.mode = "dab"
@@ -450,8 +471,10 @@ class RadioService : Service(), NativeRadio.Listener {
             audio.flush()
             main.post {
                 state.mode = "idle"
-                abandonFocus()
-                releaseWakeLock()
+                if (!music.playing) {
+                    abandonFocus()
+                    releaseWakeLock()
+                }
                 updateSession(); updateNotification(); changed()
             }
         }
@@ -466,7 +489,119 @@ class RadioService : Service(), NativeRadio.Listener {
         playFm(prefs.lastFmHz)
     }
 
-    fun togglePlay() { if (state.playing) stopPlayback() else resume() }
+    fun togglePlay() {
+        if (music.active) { if (music.playing) music.pause() else resumeMusic() }
+        else if (state.playing) stopPlayback() else resume()
+    }
+
+    /** Medya tuşu "çal": müzik seçiliyse müziği, değilse son istasyonu sürdürür. */
+    fun playAny() {
+        if (music.active) { if (!music.playing) resumeMusic() } else if (!state.playing) resume()
+    }
+
+    fun pauseAny() {
+        if (music.active) music.pause() else if (state.playing) stopPlayback()
+    }
+
+    // ------------------------------------------------------------------ Müzik
+
+    private val musicTick = object : Runnable {
+        override fun run() {
+            if (destroyed || !music.playing) return
+            changed()
+            main.postDelayed(this, 1000)
+        }
+    }
+
+    private fun onMusicChange() {
+        if (destroyed) return
+        main.removeCallbacks(musicTick)
+        if (music.playing) main.postDelayed(musicTick, 1000)
+        else if (state.mode == "idle") { abandonFocus(); releaseWakeLock() }
+        updateSession(); updateNotification(); changed()
+    }
+
+    /** Listeden seçilen parçayı çalar; dongle gerekmez, çalan radyo durur. */
+    fun playMusic(list: List<Track>, index: Int) {
+        if (state.scanning) cancelScan()
+        if (state.recording) toggleRecording()
+        if (state.mode != "idle" || state.playing) stopPlayback()
+        startForegroundNow()
+        requestFocus()
+        music.play(list, index)
+    }
+
+    private fun resumeMusic() {
+        startForegroundNow()
+        requestFocus()
+        music.resume()
+    }
+
+    private fun applyMusicVolume() {
+        music.setVolume(if (mutedNow) 0f else if (duck) audioGain * 0.3f else audioGain)
+    }
+
+    private fun musicPermitted(): Boolean = checkSelfPermission(
+        if (Build.VERSION.SDK_INT >= 33) android.Manifest.permission.READ_MEDIA_AUDIO else android.Manifest.permission.READ_EXTERNAL_STORAGE
+    ) == android.content.pm.PackageManager.PERMISSION_GRANTED
+
+    /** Dahili hafıza, SD kart, USB bellek ve seçilen klasörleri yeniden tarar. */
+    fun reloadMusic() {
+        val token = ++musicScanToken
+        musicLoading = true
+        changed()
+        val folders = prefs.musicFolders.toList()
+        val permitted = musicPermitted()
+        Thread {
+            val found = MusicLibrary.scan(applicationContext, folders, permitted)
+            val names = folders.associateBy { MusicLibrary.folderName(applicationContext, it) }
+            main.post {
+                if (!destroyed && token == musicScanToken) {
+                    musicTracks = found
+                    musicFolderNames = names
+                    musicLoading = false
+                    musicVersion++
+                    Log.i("OtoRadyo", "muzik tarandi: ${found.size} dosya, kaynaklar ${found.map { it.source }.distinct()}")
+                    changed()
+                }
+            }
+        }.start()
+    }
+
+    fun isMusicFolder(name: String) = name in musicFolderNames
+
+    fun addMusicFolder(uri: String) {
+        prefs.musicFolders = prefs.musicFolders + uri
+        reloadMusic()
+    }
+
+    fun removeMusicFolder(name: String) {
+        val uri = musicFolderNames[name] ?: return
+        prefs.musicFolders = prefs.musicFolders - uri
+        try {
+            contentResolver.releasePersistableUriPermission(android.net.Uri.parse(uri), Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        } catch (_: RuntimeException) {
+        }
+        reloadMusic()
+    }
+
+    /** SD kart ya da USB bellek takılınca / çıkarılınca liste kendini yeniler. */
+    private fun registerMounts() {
+        val r = object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                if (musicVersion > 0) reloadMusic()
+            }
+        }
+        val f = IntentFilter().apply {
+            addAction(Intent.ACTION_MEDIA_MOUNTED)
+            addAction(Intent.ACTION_MEDIA_REMOVED)
+            addAction(Intent.ACTION_MEDIA_EJECT)
+            addAction(Intent.ACTION_MEDIA_SCANNER_FINISHED)
+            addDataScheme("file")
+        }
+        if (Build.VERSION.SDK_INT >= 33) registerReceiver(r, f, Context.RECEIVER_EXPORTED) else registerReceiver(r, f)
+        mountReceiver = r
+    }
 
     fun currentKey(): String = when (state.mode) {
         "fm" -> "fm:${state.fmHz}"
@@ -483,6 +618,10 @@ class RadioService : Service(), NativeRadio.Listener {
 
     /** Listede sonraki (+1) veya önceki (-1) istasyona geç. FM'de liste boşsa 0,1 MHz adım. */
     fun seek(dir: Int) {
+        if (music.active) {
+            if (dir > 0) music.next() else music.prev()
+            return
+        }
         val mode = if (state.mode == "idle") prefs.lastMode else state.mode
         if (mode == "dab") {
             val list = visibleDab()
@@ -547,6 +686,7 @@ class RadioService : Service(), NativeRadio.Listener {
     fun setAudioGain(pct: Int) {
         prefs.audioGainPct = pct
         audioGain = pct / 100f
+        applyMusicVolume()
     }
 
     /** Çalan istasyonun sesini WAV dosyasına kaydet / kaydı bitir. */
@@ -559,7 +699,7 @@ class RadioService : Service(), NativeRadio.Listener {
             changed()
             return
         }
-        if (!state.playing) { showMessage(str(R.string.msg_rec_need_play)); return }
+        if (!state.playing || music.active) { showMessage(str(R.string.msg_rec_need_play)); return }
         recordLabel = if (state.mode == "fm") String.format(java.util.Locale.US, "FM%.1f", state.fmHz / 1e6)
         else state.dabLabel.ifEmpty { "DAB" }
         state.recording = true
@@ -580,6 +720,7 @@ class RadioService : Service(), NativeRadio.Listener {
     fun toggleMute() {
         state.muted = !state.muted
         mutedNow = state.muted
+        applyMusicVolume()
         changed()
     }
 
@@ -595,7 +736,7 @@ class RadioService : Service(), NativeRadio.Listener {
         main.postDelayed({
             if (token == sleepToken && !destroyed) {
                 state.sleepAtMs = 0
-                if (state.playing) stopPlayback()
+                pauseAny()
                 showMessage(str(R.string.msg_sleep_end))
             }
         }, minutes * 60_000L)
@@ -605,6 +746,7 @@ class RadioService : Service(), NativeRadio.Listener {
     fun setEqPreset(preset: Int) {
         prefs.eqPreset = preset
         audio.setEqPreset(preset)
+        music.setEqPreset(preset)
     }
 
     /** İstasyon listeleri ve favoriler, taşınabilir JSON olarak. */
@@ -681,6 +823,7 @@ class RadioService : Service(), NativeRadio.Listener {
         val known = dabList.firstOrNull { it.channel == channel }
         if (known != null) { playDab(known); return }
         if (!state.connected) { connectUsb(); return }
+        music.stop()
         manualChannel = channel
         startForegroundNow()
         requestFocus()
@@ -952,27 +1095,28 @@ class RadioService : Service(), NativeRadio.Listener {
     private fun setupSession() {
         val s = MediaSession(this, "Radvela")
         s.setCallback(object : MediaSession.Callback() {
-            override fun onPlay() { main.post { if (!state.playing) resume() } }
-            override fun onPause() { main.post { if (state.playing) stopPlayback() } }
-            override fun onStop() { main.post { if (state.playing) stopPlayback() } }
+            override fun onPlay() { main.post { playAny() } }
+            override fun onPause() { main.post { pauseAny() } }
+            override fun onStop() { main.post { pauseAny() } }
+            override fun onSeekTo(pos: Long) { main.post { if (music.active) music.seekTo(pos.toInt()) } }
             override fun onSkipToNext() { main.post { seek(+1) } }
             override fun onSkipToPrevious() { main.post { seek(-1) } }
             // Basılı tutma / ileri-geri sarma tuşları: FM'de 0,1 MHz adım, DAB+'ta sonraki/önceki servis
-            override fun onFastForward() { main.post { if (modeNow() == "fm") stepFm(+1) else seek(+1) } }
-            override fun onRewind() { main.post { if (modeNow() == "fm") stepFm(-1) else seek(-1) } }
+            override fun onFastForward() { main.post { if (music.active) music.seekBy(+15000) else if (modeNow() == "fm") stepFm(+1) else seek(+1) } }
+            override fun onRewind() { main.post { if (music.active) music.seekBy(-15000) else if (modeNow() == "fm") stepFm(-1) else seek(-1) } }
         })
         s.isActive = true
         session = s
         updateSession()
     }
 
-    private fun title(): String = when (state.mode) {
+    private fun title(): String = if (music.active) music.title else when (state.mode) {
         "fm" -> if (state.ps.isNotEmpty()) state.ps else formatMhz(state.fmHz)
         "dab" -> if (state.dabLabel.isNotEmpty()) state.dabLabel else "DAB+ " + state.dabChannel
         else -> "Radvela"
     }
 
-    private fun subtitle(): String = when (state.mode) {
+    private fun subtitle(): String = if (music.active) music.artist.ifEmpty { str(R.string.music_title) } else when (state.mode) {
         "fm" -> if (state.rt.isNotEmpty()) state.rt else "FM " + formatMhz(state.fmHz)
         "dab" -> if (state.dls.isNotEmpty()) state.dls else "DAB+ " + state.dabChannel + if (state.dabEnsemble.isNotEmpty()) " · " + state.dabEnsemble else ""
         else -> if (state.connected) str(R.string.notif_ready) else state.usb
@@ -985,13 +1129,15 @@ class RadioService : Service(), NativeRadio.Listener {
 
     /** Araç göstergesi / medya kartı için küçük kapak görseli: çalan frekans ya da kanal, vurgu renginde halka. */
     private fun art(): android.graphics.Bitmap {
+        if (music.active) music.art?.let { return it }
         state.slide?.let { return it }
-        val label = when (state.mode) {
-            "fm" -> String.format(java.util.Locale.US, "%.1f", state.fmHz / 1e6)
-            "dab" -> state.dabChannel.ifEmpty { "DAB" }
+        val label = when {
+            music.active -> "MP3"
+            state.mode == "fm" -> String.format(java.util.Locale.US, "%.1f", state.fmHz / 1e6)
+            state.mode == "dab" -> state.dabChannel.ifEmpty { "DAB" }
             else -> "FM"
         }
-        val unit = if (state.mode == "dab") "DAB+" else "MHz"
+        val unit = if (music.active) "" else if (state.mode == "dab") "DAB+" else "MHz"
         val logoName = when (state.mode) {
             "fm" -> fmList.firstOrNull { it.freqHz == state.fmHz }?.name ?: ""
             "dab" -> state.dabLabel
@@ -1047,14 +1193,15 @@ class RadioService : Service(), NativeRadio.Listener {
         val s = session ?: return
         val actions = PlaybackState.ACTION_PLAY or PlaybackState.ACTION_PAUSE or PlaybackState.ACTION_PLAY_PAUSE or
             PlaybackState.ACTION_STOP or PlaybackState.ACTION_SKIP_TO_NEXT or PlaybackState.ACTION_SKIP_TO_PREVIOUS or
-            PlaybackState.ACTION_FAST_FORWARD or PlaybackState.ACTION_REWIND
+            PlaybackState.ACTION_FAST_FORWARD or PlaybackState.ACTION_REWIND or PlaybackState.ACTION_SEEK_TO
         s.setPlaybackState(
             PlaybackState.Builder()
                 .setActions(actions)
-                .setState(if (state.playing) PlaybackState.STATE_PLAYING else PlaybackState.STATE_PAUSED, PlaybackState.PLAYBACK_POSITION_UNKNOWN, 1f)
+                .setState(if (state.playing || music.playing) PlaybackState.STATE_PLAYING else PlaybackState.STATE_PAUSED,
+                    if (music.active) music.positionMs.toLong() else PlaybackState.PLAYBACK_POSITION_UNKNOWN, 1f)
                 .build()
         )
-        val album = if (state.mode == "dab") "DAB+" else if (state.mode == "fm") "FM" else "Radyo"
+        val album = if (music.active) music.album else if (state.mode == "dab") "DAB+" else if (state.mode == "fm") "FM" else "Radyo"
         s.setMetadata(
             MediaMetadata.Builder()
                 .putString(MediaMetadata.METADATA_KEY_TITLE, title())
@@ -1063,6 +1210,7 @@ class RadioService : Service(), NativeRadio.Listener {
                 .putString(MediaMetadata.METADATA_KEY_DISPLAY_TITLE, title())
                 .putString(MediaMetadata.METADATA_KEY_DISPLAY_SUBTITLE, subtitle())
                 .putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART, art())
+                .putLong(MediaMetadata.METADATA_KEY_DURATION, if (music.active) music.durationMs.toLong() else 0L)
                 .build()
         )
     }
@@ -1125,11 +1273,15 @@ class RadioService : Service(), NativeRadio.Listener {
                     AudioManager.AUDIOFOCUS_LOSS -> {
                         // Başka bir kaynak (aracın kendi radyosu/müziği) kalıcı olarak devraldı: DSP'yi ve USB'yi boşa harcama
                         audio.muted = true
-                        main.post { if (state.playing) stopPlayback() }
+                        main.post { pauseAny() }
                     }
-                    AudioManager.AUDIOFOCUS_LOSS_TRANSIENT -> audio.muted = true
-                    AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK -> duck = true   // navigasyon uyarısı: kıs
-                    AudioManager.AUDIOFOCUS_GAIN -> { audio.muted = false; duck = false }
+                    AudioManager.AUDIOFOCUS_LOSS_TRANSIENT -> { audio.muted = true; main.post { music.focusLost() } }
+                    AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK -> { duck = true; main.post { applyMusicVolume() } }   // navigasyon uyarısı: kıs
+                    AudioManager.AUDIOFOCUS_GAIN -> {
+                        audio.muted = false
+                        duck = false
+                        main.post { applyMusicVolume(); music.focusGained() }
+                    }
                 }
             }
             .build()

@@ -85,7 +85,7 @@
     <string name="diag_mode">Mode : %1$s</string>
     <string name="diag_fm">Signal FM : %1$.0f dB, stéréo=%2$b, RDS=%3$b</string>
     <string name="diag_dab">DAB : SNR %1$.1f dB, synchro=%2$d, %3$s\nErreurs FIC=%4$d, CRC audio ok=%5$d err.=%6$d, erreurs RS=%7$d</string>
-    <string name="about_text">Récepteur FM (stéréo, RDS) et DAB/DAB+. Le dongle RTL-SDR se branche directement en USB.\n\nGPL-2.0 ou ultérieure. Cœur DAB : welle.io (GPL). MP2 : mpg123.\nDétails : NOTICE.md\nLogos : radio-browser.info</string>
+    <string name="about_text">Récepteur FM (stéréo, RDS) et DAB/DAB+ avec lecteur de musique. Le dongle RTL-SDR se branche directement en USB.\n\nGPL-2.0 ou ultérieure. Cœur DAB : welle.io (GPL). MP2 : mpg123.\nDétails : NOTICE.md\nLogos : radio-browser.info</string>
     <string name="msg_dab_list_empty">La liste DAB+ est vide : MENU &gt; RECHERCHE AUTO (DAB+)</string>
     <string name="empty_fav">Aucune station favorite.\nAppuyez longuement sur une station de la liste pour l\'ajouter aux favoris.</string>
     <string name="empty_list">La liste est vide.\nTrouvez des stations avec la RECHERCHE AUTO.</string>
