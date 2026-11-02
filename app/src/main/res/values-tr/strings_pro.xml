@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sleep_t">UYKU ZAMANLAYICISI</string>
+    <string name="sleep_s">Belirlenen süre sonunda çalmayı durdurur</string>
+    <string name="sleep_left">%1$d dk kaldı</string>
+    <string name="sleep_off">Kapalı</string>
+    <string name="sleep_min">%1$d dakika</string>
+    <string name="msg_sleep_set">Radyo %1$d dakika sonra duracak</string>
+    <string name="msg_sleep_end">Uyku zamanlayıcısı doldu</string>
+    <string name="eq_t">EKOLAYZER</string>
+    <string name="eq_flat">Düz</string>
+    <string name="eq_bass">Bas güçlendirme</string>
+    <string name="eq_vocal">Konuşma</string>
+    <string name="eq_treble">Tiz güçlendirme</string>
+    <string name="eq_loud">Gürlük</string>
+    <string name="backup_t">İSTASYONLARI YEDEKLE</string>
+    <string name="backup_s">İstasyonları ve favorileri dosyaya kaydet</string>
+    <string name="restore_t">İSTASYONLARI GERİ YÜKLE</string>
+    <string name="restore_s">İstasyonları ve favorileri dosyadan al</string>
+    <string name="msg_backup_ok">İstasyonlar kaydedildi</string>
+    <string name="msg_restore_ok">İstasyonlar geri yüklendi</string>
+    <string name="msg_file_fail">Bu dosya okunamadı veya yazılamadı</string>
+    <string name="help_t">YARDIM</string>
+    <string name="help_s">Gerekenler ve bağlantı</string>
+    <string name="help_body">Radvela, FM ve DAB+ yayınlarını internet akışı olmadan doğrudan alır. Gerekenler:\n\n1. RTL-SDR USB dongle (RTL2832U).\n2. Cihazında tam boy USB yoksa USB OTG adaptörü.\n3. Anten; DAB+ için yaklaşık 33 cm dikey, FM için 75 cm.\n\nDongle\'ı tak, izin penceresinde HER ZAMAN\'ı seç, sonra menüden OTOMATİK TARAMA\'yı çalıştır. Cihazın USB ana makine modunu desteklemeli; DAB+ için bölgende yayın olmalı.</string>
+    <string name="privacy_t">GİZLİLİK</string>
+    <string name="privacy_s">Uygulamanın gönderdikleri ve sakladıkları</string>
+    <string name="privacy_body">Radvela\'da hesap, reklam ve analiz yoktur. Radyo alımı çevrimdışı çalışır, istasyonların bu cihazda kalır.\n\nİstasyon logoları açıksa (Ayarlar), logo bulmak için istasyon adları radio-browser.info\'ya gönderilir; bu hizmet her web sitesi gibi IP adresini de görür. Bunu Ayarlar\'dan kapatabilirsin. Logo görselleri istasyonun kendi sitesinden de indirilebilir.\n\nKayıtlar yalnızca cihazına kaydedilir.</string>
+    <string name="about_source">Kaynak kodu: %1$s</string>
+</resources>

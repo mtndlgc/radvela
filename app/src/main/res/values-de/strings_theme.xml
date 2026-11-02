@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">DESIGN-GALERIE</string>
+    <string name="set_anim">Einfache Animationen</string>
+    <string name="set_list">Senderwand</string>
+    <string name="list_cards">Karten</string>
+    <string name="list_compact">Kompakt</string>
+    <string name="list_rows">Zeilen</string>
+    <string name="set_wood">Classic Analog: Holzhintergrund</string>
+    <string name="vol_t">TON</string>
+    <string name="vol_s">Lautstärke und Stummschaltung</string>
+    <string name="act_mute">STUMM</string>
+    <string name="act_unmute">TON AN</string>
+    <string name="tab_fav">Favoriten</string>
+    <string name="td_oem">Schwarz und Anthrazit im Werksdisplay-Stil</string>
+    <string name="td_modern">OLED-Schwarz mit Live-Audiospektrum</string>
+    <string name="td_classic">Runde Skala mit beweglichem Zeiger</string>
+    <string name="td_minimal">Riesiger Name und Tasten für die Fahrt</string>
+    <string name="td_wall">Eine Wand aus Senderkarten</string>
+    <string name="usb_stuck">Der Stick antwortet nicht. Ziehe ihn ab und stecke ihn wieder ein.</string>
+    <string name="nat_no_aac">Dieses Gerät hat keinen kompatiblen AAC-Decoder, DAB+-Ton kann nicht abgespielt werden.</string>
+</resources>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Otomatik üretildi (i18n/gen.py). Elle düzenlemeyin. -->
+<resources>
+    <string name="color_red">Красный</string>
+    <string name="color_amber">Янтарный</string>
+    <string name="color_green">Зелёный</string>
+    <string name="color_blue">Синий</string>
+    <string name="color_cyan">Бирюзовый</string>
+    <string name="btn_list">СПИСОК</string>
+    <string name="btn_fav">ИЗБРАННОЕ</string>
+    <string name="btn_rec">ЗАПИСЬ</string>
+    <string name="btn_step">0,1 MHz</string>
+    <string name="btn_manual_fm">ВРУЧНУЮ</string>
+    <string name="btn_manual_dab">КАНАЛ ВРУЧНУЮ</string>
+    <string name="btn_scan_dab">ПОИСК DAB+</string>
+    <string name="btn_gain_opt">ПОДБОР УСИЛ.</string>
+    <string name="btn_stop_scan">ОСТАНОВИТЬ ПОИСК</string>
+    <string name="cap_prev">НАЗАД</string>
+    <string name="cap_next">ДАЛЕЕ</string>
+    <string name="cap_manual">ВРУЧНУЮ</string>
+    <string name="cap_scan">ПОИСК</string>
+    <string name="cap_gain">УСИЛ.</string>
+    <string name="list_title">СТАНЦИИ</string>
+    <string name="list_scan">АВТОПОИСК</string>
+    <string name="list_clear">ОЧИСТИТЬ СПИСОК</string>
+    <string name="menu_title">МЕНЮ</string>
+    <string name="menu_list_t">СПИСОК СТАНЦИЙ</string>
+    <string name="menu_list_s">Сохранённые станции FM и DAB+</string>
+    <string name="menu_scan_fm_t">АВТОПОИСК (FM)</string>
+    <string name="menu_scan_fm_s">Сканировать диапазон 87,5–108 MHz</string>
+    <string name="menu_scan_dab_t">АВТОПОИСК (DAB+)</string>
+    <string name="menu_scan_dab_s">Сканировать все каналы Band III</string>
+    <string name="menu_manual_t">РУЧНАЯ НАСТРОЙКА</string>
+    <string name="menu_manual_s">Выбрать частоту или канал</string>
+    <string name="menu_add_t">ДОБАВИТЬ В СПИСОК</string>
+    <string name="menu_add_s">Добавить текущую станцию FM в список</string>
+    <string name="menu_clear_t">ОЧИСТИТЬ СПИСОК</string>
+    <string name="menu_clear_s">Удалить список выбранного типа</string>
+    <string name="menu_rec_start_t">НАЧАТЬ ЗАПИСЬ</string>
+    <string name="menu_rec_stop_t">ОСТАНОВИТЬ ЗАПИСЬ</string>
+    <string name="menu_rec_s">Записывает звук в WAV (Music/Radvela)</string>
+    <string name="menu_theme_t">ТЕМА ОФОРМЛЕНИЯ</string>
+    <string name="menu_theme_s">Сейчас: %1$s (нажмите для смены)</string>
+    <string name="theme_classic">Классический аналоговый</string>
+    <string name="theme_modern">Современный</string>
+    <string name="menu_color_t">ЦВЕТОВАЯ СХЕМА</string>
+    <string name="menu_color_s">Сейчас: %1$s</string>
+    <string name="menu_lang_t">ЯЗЫК / LANGUAGE</string>
+    <string name="menu_lang_s">Сейчас: %1$s</string>
+    <string name="lang_title">ВЫБОР ЯЗЫКА / SELECT LANGUAGE</string>
+    <string name="lang_auto">Автоматически (система)</string>
+    <string name="menu_gain_t">ПОДБОР УСИЛЕНИЯ DAB+</string>
+    <string name="menu_gain_s">Находит усиление с наибольшим SNR на текущем канале</string>
+    <string name="menu_settings_t">НАСТРОЙКИ</string>
+    <string name="menu_settings_s">Усиление, ppm, громкость, моно</string>
+    <string name="menu_diag_t">ДИАГНОСТИКА</string>
+    <string name="menu_diag_s">Состояние звука, усиления и IQ</string>
+    <string name="menu_about_t">О ПРОГРАММЕ</string>
+    <string name="menu_about_s">Версия и лицензия</string>
+    <string name="confirm_clear_title">УДАЛИТЬ СПИСОК %1$s</string>
+    <string name="confirm_clear_msg">Все сохранённые станции %1$s будут удалены. Подтвердить?</string>
+    <string name="act_cancel">ОТМЕНА</string>
+    <string name="act_delete">УДАЛИТЬ</string>
+    <string name="act_listen">СЛУШАТЬ</string>
+    <string name="act_ok">ОК</string>
+    <string name="act_close">ЗАКРЫТЬ</string>
+    <string name="sheet_dab_channel">ВЫБОР КАНАЛА DAB+</string>
+    <string name="sheet_fm_freq">ЧАСТОТА FM</string>
+    <string name="nudge_m1">−1</string>
+    <string name="nudge_m01">−0,1</string>
+    <string name="nudge_p01">+0,1</string>
+    <string name="nudge_p1">+1</string>
+    <string name="set_agc">Автоматическое усиление (AGC)</string>
+    <string name="set_gain">Усиление вручную</string>
+    <string name="set_ppm">Коррекция частоты (ppm)</string>
+    <string name="set_volume">Программная громкость</string>
+    <string name="set_mono">FM: принудительно моно</string>
+    <string name="set_deemph">FM: деэмфазис 75 мкс (Америка); выкл. = 50 мкс</string>
+    <string name="set_autoplay">Включать последнюю станцию при подключении донгла</string>
+    <string name="set_boot">Запускать радио автоматически при включении автомобиля</string>
+    <string name="set_colors">Цветовая схема</string>
+    <string name="fmt_percent">%1$d%%</string>
+    <string name="diag_audio">Звук: %1$s</string>
+    <string name="diag_usb">USB: %1$s</string>
+    <string name="diag_mode">Режим: %1$s</string>
+    <string name="diag_fm">Сигнал FM: %1$.0f dB, стерео=%2$b, RDS=%3$b</string>
+    <string name="diag_dab">DAB: SNR %1$.1f dB, синхр.=%2$d, %3$s\nОшибки FIC=%4$d, CRC звука: ок=%5$d ош.=%6$d, ошибки RS=%7$d</string>
+    <string name="about_text">Приёмник FM (стерео, RDS) и DAB/DAB+. Донгл RTL-SDR подключается напрямую по USB.\n\nGPL-2.0 или новее. Ядро DAB: welle.io (GPL). MP2: mpg123.\nПодробности: NOTICE.md\nЛоготипы: radio-browser.info</string>
+    <string name="msg_dab_list_empty">Список DAB+ пуст: МЕНЮ &gt; АВТОПОИСК (DAB+)</string>
+    <string name="empty_fav">Нет избранных станций.\nУдерживайте станцию в списке, чтобы добавить её в избранное.</string>
+    <string name="empty_list">Список пуст.\nНайдите станции с помощью АВТОПОИСКА.</string>
+    <string name="empty_dab">Нет станций DAB+. Просканируйте каналы: МЕНЮ &gt; АВТОПОИСК (DAB+).</string>
+    <string name="empty_fm">Нет станций FM. Просканируйте диапазон: МЕНЮ &gt; АВТОПОИСК (FM).</string>
+    <string name="dabq_nosignal">Нет сигнала</string>
+    <string name="dabq_head">SNR %1$.0f dB  ·  ошибки FIC %2$d  ·  кадры звука %3$d ок / %4$d с ошибкой</string>
+    <string name="dabq_nosync">На этом канале сигнал не найден. Поднесите антенну к окну или разместите её выше в салоне.</string>
+    <string name="dabq_weak">Слабый сигнал: информацию об ансамбле не удаётся декодировать, поэтому звука нет. Держите антенну вертикально (около 33 см) и повыше; поможет USB-удлинитель и DAB-фильтр.</string>
+    <string name="dabq_waiting">Ожидание данных службы…</string>
+    <string name="dabq_errors">%1$d%% кадров звука повреждены: сигнал на пределе, звук может прерываться или пропадать.</string>
+    <string name="dabq_nodecoder">Кадры звука приходят, но декодер не запустился (кодек этой службы, возможно, не поддерживается).</string>
+    <string name="status_starting">Запуск…</string>
+    <string name="scan_fm_running">Поиск FM…</string>
+    <string name="scan_dab_running">Поиск DAB+…</string>
+    <string name="list_pos">В списке: %1$d / %2$d</string>
+    <string name="list_none">Нет в списке</string>
+    <string name="chip_stereo">СТЕРЕО</string>
+    <string name="chip_mono">МОНО</string>
+    <string name="chip_sync">СИНХР.</string>
+    <string name="chip_weak">СЛАБЫЙ</string>
+    <string name="chip_nosignal">НЕТ СИГНАЛА</string>
+    <string name="chip_off">ВЫКЛ.</string>
+    <string name="chip_snr">SNR %1$.0f dB</string>
+    <string name="sub_channel">канал %1$s</string>
+    <string name="row_dab_channel">DAB%1$s · канал %2$s</string>
+    <string name="sub_idle_ready">Нажмите «Воспроизвести», выберите станцию или запустите автопоиск</string>
+    <string name="sub_idle_noconn">Подключите донгл RTL-SDR к порту USB</string>
+    <string name="lc_stereo">стерео</string>
+    <string name="lc_mono">моно</string>
+    <string name="usb_searching">Поиск донгла…</string>
+    <string name="usb_removed">Донгл отключён</string>
+    <string name="usb_notfound">Донгл RTL-SDR не найден</string>
+    <string name="usb_perm_wait">Ожидание разрешения USB…</string>
+    <string name="usb_perm_denied">Разрешение USB не предоставлено</string>
+    <string name="usb_opening">Открытие донгла…</string>
+    <string name="usb_open_fail">Не удалось открыть USB-устройство</string>
+    <string name="usb_rtl_fail">Не удалось открыть RTL-SDR: %1$s</string>
+    <string name="usb_connected">RTL-SDR подключён</string>
+    <string name="msg_fm_fail">Не удалось запустить FM</string>
+    <string name="msg_dab_fail">Не удалось запустить DAB+</string>
+    <string name="msg_rec_saved">Запись сохранена: Music/Radvela/%1$s</string>
+    <string name="msg_rec_stopped">Запись остановлена</string>
+    <string name="msg_rec_need_play">Для записи сначала включите станцию</string>
+    <string name="msg_rec_fail">Не удалось начать запись</string>
+    <string name="msg_add_need_fm">Чтобы добавить в список, включите станцию FM</string>
+    <string name="msg_add_dup">Эта станция уже в списке</string>
+    <string name="msg_added">%1$s добавлена в список</string>
+    <string name="msg_cleared">Список станций очищен</string>
+    <string name="msg_tuning_dab">Прослушивание канала %1$s; поиск служб…</string>
+    <string name="msg_gain_need_dab">Сначала включите станцию DAB+ и дождитесь сигнала</string>
+    <string name="msg_gain_best">Лучшее усиление: %1$d / %2$d (SNR %3$.1f dB). AGC отключён; включить его можно в настройках.</string>
+    <string name="msg_gain_search">Подбор усиления %1$d/%2$d</string>
+    <string name="msg_gain_refine">Подбор усиления %1$d/%2$d (точная настройка)</string>
+    <string name="msg_conn_lost">Соединение с RTL-SDR потеряно</string>
+    <string name="msg_dab_saved">Сохранено служб DAB: %1$d</string>
+    <string name="msg_fm_none">Станции FM не найдены (проверьте антенну)</string>
+    <string name="msg_fm_found">Найдено станций FM: %1$d</string>
+    <string name="msg_dab_none">Передачи DAB+ не найдены (проверьте антенну)</string>
+    <string name="msg_dab_found">Найдено служб DAB: %1$d</string>
+    <string name="notif_ready">Готово</string>
+    <string name="notif_prev">Назад</string>
+    <string name="notif_next">Далее</string>
+    <string name="notif_close">Закрыть</string>
+    <string name="notif_channel">Радио</string>
+    <string name="diag_gain">усиление %1$s dB, уровень %2$d · переполнений IQ %3$d</string>
+    <string name="diag_overrun">(обработка не успевает!)</string>
+    <string name="audio_off">аудиовыход отключён</string>
+    <string name="audio_stats">%1$d Hz · буфер %2$d/%3$d ms · обрывы %4$d · переполнения %5$d · системные обрывы %6$d</string>
+    <string name="nat_core_not_ready">Ядро не готово</string>
+    <string name="nat_fm_tune">FM: не удалось настроить приёмник</string>
+    <string name="nat_tcp_connect">Не удалось подключиться к серверу rtl_tcp</string>
+    <string name="nat_tcp_header">Не удалось получить заголовок rtl_tcp</string>
+    <string name="nat_tcp_lost">Соединение rtl_tcp потеряно</string>
+    <string name="nat_tcp_fail">Не удалось установить соединение rtl_tcp</string>
+    <string name="nat_usb_open">rtlsdr_open_fd завершился с ошибкой</string>
+    <string name="nat_sample_rate">не удалось задать частоту дискретизации</string>
+    <string name="nat_usb_read">Ошибка чтения USB (возможно, донгл отключён)</string>
+    <string name="nat_dab_core">Не удалось запустить ядро DAB</string>
+    <string name="nat_no_dongle">RTL-SDR не подключён</string>
+    <string name="nat_open_fail">Не удалось открыть RTL-SDR</string>
+    <string name="menu_look_t">ДНЕВНОЙ / НОЧНОЙ РЕЖИМ</string>
+    <string name="look_day">День</string>
+    <string name="look_night">Ночь</string>
+    <string name="set_logos">Загружать логотипы станций из интернета</string>
+    <string-array name="rds_pty">
+        <item></item>
+        <item>Новости</item>
+        <item>Текущие события</item>
+        <item>Информация</item>
+        <item>Спорт</item>
+        <item>Образование</item>
+        <item>Драма</item>
+        <item>Культура</item>
+        <item>Наука</item>
+        <item>Разное</item>
+        <item>Поп-музыка</item>
+        <item>Рок-музыка</item>
+        <item>Лёгкая музыка</item>
+        <item>Лёгкая классика</item>
+        <item>Классика</item>
+        <item>Другая музыка</item>
+        <item>Погода</item>
+        <item>Экономика</item>
+        <item>Детям</item>
+        <item>Общество</item>
+        <item>Религия</item>
+        <item>Звонки в эфир</item>
+        <item>Путешествия</item>
+        <item>Досуг</item>
+        <item>Джаз</item>
+        <item>Кантри</item>
+        <item>Национальная музыка</item>
+        <item>Ретро</item>
+        <item>Фолк</item>
+        <item>Документальное</item>
+        <item>Тест тревоги</item>
+        <item>Тревога</item>
+    </string-array>
+</resources>

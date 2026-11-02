@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sleep_t">ТАЙМЕР СНА</string>
+    <string name="sleep_s">Останавливает воспроизведение через заданное время</string>
+    <string name="sleep_left">Осталось %1$d мин</string>
+    <string name="sleep_off">Выключен</string>
+    <string name="sleep_min">%1$d минут</string>
+    <string name="msg_sleep_set">Радио остановится через %1$d мин</string>
+    <string name="msg_sleep_end">Таймер сна завершён</string>
+    <string name="eq_t">ЭКВАЛАЙЗЕР</string>
+    <string name="eq_flat">Ровный</string>
+    <string name="eq_bass">Усиление басов</string>
+    <string name="eq_vocal">Речь</string>
+    <string name="eq_treble">Усиление верхов</string>
+    <string name="eq_loud">Тонкомпенсация</string>
+    <string name="backup_t">СОХРАНИТЬ СТАНЦИИ</string>
+    <string name="backup_s">Сохранить станции и избранное в файл</string>
+    <string name="restore_t">ВОССТАНОВИТЬ СТАНЦИИ</string>
+    <string name="restore_s">Загрузить станции и избранное из файла</string>
+    <string name="msg_backup_ok">Станции сохранены</string>
+    <string name="msg_restore_ok">Станции восстановлены</string>
+    <string name="msg_file_fail">Не удалось прочитать или записать файл</string>
+    <string name="help_t">ПОМОЩЬ</string>
+    <string name="help_s">Что нужно и как подключить</string>
+    <string name="help_body">Radvela принимает FM и DAB+ напрямую, без интернет-потока. Вам нужны:\n\n1. USB-донгл RTL-SDR (RTL2832U).\n2. Адаптер USB OTG, если на устройстве нет полноразмерного USB.\n3. Антенна: около 33 см вертикально для DAB+, 75 см для FM.\n\nПодключите донгл, выберите ВСЕГДА в окне разрешения, затем запустите АВТОПОИСК из меню. Устройство должно поддерживать режим USB-хоста, а для DAB+ нужно местное покрытие.</string>
+    <string name="privacy_t">КОНФИДЕНЦИАЛЬНОСТЬ</string>
+    <string name="privacy_s">Что приложение отправляет и хранит</string>
+    <string name="privacy_body">В Radvela нет аккаунтов, рекламы и аналитики. Приём работает офлайн, станции остаются на этом устройстве.\n\nЕсли логотипы включены (Настройки), названия станций отправляются на radio-browser.info; этот сервис, как и любой сайт, видит ваш IP-адрес. Это можно отключить в Настройках. Логотипы также могут загружаться с сайта станции.\n\nЗаписи сохраняются только на устройстве.</string>
+    <string name="about_source">Исходный код: %1$s</string>
+</resources>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Otomatik üretildi (i18n/gen.py). Elle düzenlemeyin. -->
+<resources>
+    <string name="color_red">Kırmızı</string>
+    <string name="color_amber">Amber</string>
+    <string name="color_green">Yeşil</string>
+    <string name="color_blue">Mavi</string>
+    <string name="color_cyan">Camgöbeği</string>
+    <string name="btn_list">LİSTE</string>
+    <string name="btn_fav">FAVORİ</string>
+    <string name="btn_rec">KAYIT</string>
+    <string name="btn_step">0,1 MHz</string>
+    <string name="btn_manual_fm">ELLE AYAR</string>
+    <string name="btn_manual_dab">ELLE KANAL</string>
+    <string name="btn_scan_dab">DAB+ ARAMA</string>
+    <string name="btn_gain_opt">KAZANÇ ARA</string>
+    <string name="btn_stop_scan">ARAMAYI DURDUR</string>
+    <string name="cap_prev">ÖNCEKİ</string>
+    <string name="cap_next">SONRAKİ</string>
+    <string name="cap_manual">ELLE</string>
+    <string name="cap_scan">ARAMA</string>
+    <string name="cap_gain">KAZANÇ</string>
+    <string name="list_title">İSTASYONLAR</string>
+    <string name="list_scan">OTOMATİK ARAMA</string>
+    <string name="list_clear">LİSTEYİ TEMİZLE</string>
+    <string name="menu_title">MENÜ</string>
+    <string name="menu_list_t">İSTASYON LİSTESİ</string>
+    <string name="menu_list_s">Kayıtlı FM ve DAB+ istasyonları</string>
+    <string name="menu_scan_fm_t">OTOMATİK ARAMA (FM)</string>
+    <string name="menu_scan_fm_s">87,5–108 MHz bandını tara</string>
+    <string name="menu_scan_dab_t">OTOMATİK ARAMA (DAB+)</string>
+    <string name="menu_scan_dab_s">Tüm Band III kanallarını tara</string>
+    <string name="menu_manual_t">ELLE AYAR</string>
+    <string name="menu_manual_s">Frekans veya kanal seç</string>
+    <string name="menu_add_t">LİSTEYE EKLE</string>
+    <string name="menu_add_s">Çalan FM istasyonunu listeye ekle</string>
+    <string name="menu_clear_t">LİSTEYİ TEMİZLE</string>
+    <string name="menu_clear_s">Seçili türün listesini sil</string>
+    <string name="menu_rec_start_t">KAYIT BAŞLAT</string>
+    <string name="menu_rec_stop_t">KAYDI DURDUR</string>
+    <string name="menu_rec_s">Sesi WAV olarak kaydeder (Müzik/Radvela)</string>
+    <string name="menu_theme_t">ARAYÜZ TEMASI</string>
+    <string name="menu_theme_s">Şu an: %1$s (dokununca değişir)</string>
+    <string name="theme_classic">Klasik Analog</string>
+    <string name="theme_modern">Modern</string>
+    <string name="menu_color_t">RENK ŞEMASI</string>
+    <string name="menu_color_s">Şu an: %1$s</string>
+    <string name="menu_lang_t">DİL / LANGUAGE</string>
+    <string name="menu_lang_s">Şu an: %1$s</string>
+    <string name="lang_title">DİL SEÇ / SELECT LANGUAGE</string>
+    <string name="lang_auto">Otomatik (sistem)</string>
+    <string name="menu_gain_t">DAB+ KAZANÇ OPTİMİZASYONU</string>
+    <string name="menu_gain_s">Çalan kanalda SNR\'yi en yükseğe çıkaran kazancı bulur</string>
+    <string name="menu_settings_t">AYARLAR</string>
+    <string name="menu_settings_s">Kazanç, ppm, ses seviyesi, mono</string>
+    <string name="menu_diag_t">TANILAMA</string>
+    <string name="menu_diag_s">Ses, kazanç ve IQ durumu</string>
+    <string name="menu_about_t">HAKKINDA</string>
+    <string name="menu_about_s">Sürüm ve lisans</string>
+    <string name="confirm_clear_title">%1$s LİSTESİNİ SİL</string>
+    <string name="confirm_clear_msg">Kayıtlı %1$s istasyonlarının tümü silinecek. Onaylıyor musunuz?</string>
+    <string name="act_cancel">VAZGEÇ</string>
+    <string name="act_delete">SİL</string>
+    <string name="act_listen">DİNLE</string>
+    <string name="act_ok">TAMAM</string>
+    <string name="act_close">KAPAT</string>
+    <string name="sheet_dab_channel">DAB+ KANALI SEÇ</string>
+    <string name="sheet_fm_freq">FM FREKANSI</string>
+    <string name="nudge_m1">−1</string>
+    <string name="nudge_m01">−0,1</string>
+    <string name="nudge_p01">+0,1</string>
+    <string name="nudge_p1">+1</string>
+    <string name="set_agc">Otomatik kazanç (AGC)</string>
+    <string name="set_gain">Elle kazanç</string>
+    <string name="set_ppm">Frekans düzeltmesi (ppm)</string>
+    <string name="set_volume">Yazılım ses seviyesi</string>
+    <string name="set_mono">FM: zorla mono</string>
+    <string name="set_deemph">FM: 75 µs vurgu (Amerika); kapalı = 50 µs</string>
+    <string name="set_autoplay">Dongle takılınca son istasyonu çal</string>
+    <string name="set_boot">Araç açılınca radyoyu otomatik başlat</string>
+    <string name="set_colors">Renk şeması</string>
+    <string name="fmt_percent">%%%1$d</string>
+    <string name="diag_audio">Ses: %1$s</string>
+    <string name="diag_usb">USB: %1$s</string>
+    <string name="diag_mode">Kip: %1$s</string>
+    <string name="diag_fm">FM sinyal: %1$.0f dB, stereo=%2$b, RDS=%3$b</string>
+    <string name="diag_dab">DAB: SNR %1$.1f dB, senkron=%2$d, %3$s\nFIC hata=%4$d, ses CRC tamam=%5$d hata=%6$d, RS hata=%7$d</string>
+    <string name="about_text">FM (stereo, RDS) ve DAB/DAB+ alıcısı. RTL-SDR dongle doğrudan USB ile bağlanır.\n\nGPL-2.0 veya sonrası. DAB çekirdeği: welle.io (GPL). MP2: mpg123.\nAyrıntı: NOTICE.md\nLogolar: radio-browser.info</string>
+    <string name="msg_dab_list_empty">DAB+ listesi boş: MENÜ &gt; OTOMATİK ARAMA (DAB+)</string>
+    <string name="empty_fav">Favori istasyon yok.\nListede bir istasyona uzun basarak favoriye ekleyin.</string>
+    <string name="empty_list">Liste boş.\nOTOMATİK ARAMA ile istasyonları bulun.</string>
+    <string name="empty_dab">DAB+ istasyonu yok. MENÜ &gt; OTOMATİK ARAMA (DAB+) ile kanalları tarayın.</string>
+    <string name="empty_fm">FM istasyonu yok. MENÜ &gt; OTOMATİK ARAMA (FM) ile bandı tarayın.</string>
+    <string name="dabq_nosignal">Sinyal yok</string>
+    <string name="dabq_head">SNR %1$.0f dB  ·  FIC hata %2$d  ·  ses çerçevesi %3$d tamam / %4$d hatalı</string>
+    <string name="dabq_nosync">Bu kanalda sinyal bulunamadı. Anteni pencere kenarına ya da araç içinde yüksek bir yere alın.</string>
+    <string name="dabq_weak">Zayıf sinyal: topluluk bilgisi çözülemiyor, bu yüzden ses gelmiyor. Anteni dikey (yaklaşık 33 cm) ve yüksekte tutun; USB uzatma kablosu ve DAB filtresi yardımcı olur.</string>
+    <string name="dabq_waiting">Servis verisi bekleniyor…</string>
+    <string name="dabq_errors">Ses çerçevelerinin %%%1$d\'i bozuk: sinyal sınırda, ses kesik ya da sessiz olabilir.</string>
+    <string name="dabq_nodecoder">Ses çerçevesi geliyor ama çözücü başlamadı (bu servisin kodeği desteklenmiyor olabilir).</string>
+    <string name="status_starting">Başlatılıyor…</string>
+    <string name="scan_fm_running">FM taranıyor…</string>
+    <string name="scan_dab_running">DAB+ taranıyor…</string>
+    <string name="list_pos">Listede %1$d / %2$d</string>
+    <string name="list_none">Listede yok</string>
+    <string name="chip_stereo">STEREO</string>
+    <string name="chip_mono">MONO</string>
+    <string name="chip_sync">SENKRON</string>
+    <string name="chip_weak">ZAYIF</string>
+    <string name="chip_nosignal">SİNYAL YOK</string>
+    <string name="chip_off">KAPALI</string>
+    <string name="chip_snr">SNR %1$.0f dB</string>
+    <string name="sub_channel">kanal %1$s</string>
+    <string name="row_dab_channel">DAB%1$s · kanal %2$s</string>
+    <string name="sub_idle_ready">ÇAL\'a basın, bir istasyon seçin veya otomatik arama yapın</string>
+    <string name="sub_idle_noconn">RTL-SDR dongle\'ı USB girişine takın</string>
+    <string name="lc_stereo">stereo</string>
+    <string name="lc_mono">mono</string>
+    <string name="usb_searching">Dongle aranıyor…</string>
+    <string name="usb_removed">Dongle çıkarıldı</string>
+    <string name="usb_notfound">RTL-SDR dongle bulunamadı</string>
+    <string name="usb_perm_wait">USB izni bekleniyor…</string>
+    <string name="usb_perm_denied">USB izni verilmedi</string>
+    <string name="usb_opening">Dongle açılıyor…</string>
+    <string name="usb_open_fail">USB cihazı açılamadı</string>
+    <string name="usb_rtl_fail">RTL-SDR açılamadı: %1$s</string>
+    <string name="usb_connected">RTL-SDR bağlı</string>
+    <string name="msg_fm_fail">FM başlatılamadı</string>
+    <string name="msg_dab_fail">DAB+ başlatılamadı</string>
+    <string name="msg_rec_saved">Kayıt kaydedildi: Müzik/Radvela/%1$s</string>
+    <string name="msg_rec_stopped">Kayıt durduruldu</string>
+    <string name="msg_rec_need_play">Kayıt için önce bir istasyon çalın</string>
+    <string name="msg_rec_fail">Kayıt başlatılamadı</string>
+    <string name="msg_add_need_fm">Listeye eklemek için FM\'de bir istasyon çalın</string>
+    <string name="msg_add_dup">Bu istasyon zaten listede</string>
+    <string name="msg_added">%1$s listeye eklendi</string>
+    <string name="msg_cleared">İstasyon listesi temizlendi</string>
+    <string name="msg_tuning_dab">Kanal %1$s dinleniyor; servisler aranıyor…</string>
+    <string name="msg_gain_need_dab">Önce bir DAB+ istasyonu çalın ve sinyalin gelmesini bekleyin</string>
+    <string name="msg_gain_best">En iyi kazanç: %1$d / %2$d (SNR %3$.1f dB). AGC kapatıldı; Ayarlar\'dan açabilirsiniz.</string>
+    <string name="msg_gain_search">Kazanç aranıyor %1$d/%2$d</string>
+    <string name="msg_gain_refine">Kazanç aranıyor %1$d/%2$d (ince ayar)</string>
+    <string name="msg_conn_lost">RTL-SDR bağlantısı koptu</string>
+    <string name="msg_dab_saved">%1$d DAB servisi kayıtlı</string>
+    <string name="msg_fm_none">FM istasyonu bulunamadı (anteni kontrol edin)</string>
+    <string name="msg_fm_found">%1$d FM istasyonu bulundu</string>
+    <string name="msg_dab_none">DAB+ yayını bulunamadı (anteni kontrol edin)</string>
+    <string name="msg_dab_found">%1$d DAB servisi bulundu</string>
+    <string name="notif_ready">Hazır</string>
+    <string name="notif_prev">Önceki</string>
+    <string name="notif_next">Sonraki</string>
+    <string name="notif_close">Kapat</string>
+    <string name="notif_channel">Radyo</string>
+    <string name="diag_gain">kazanç %1$s dB, seviye %2$d · IQ taşma %3$d</string>
+    <string name="diag_overrun">(işlem yetişemiyor!)</string>
+    <string name="audio_off">ses çıkışı kapalı</string>
+    <string name="audio_stats">%1$d Hz · tampon %2$d/%3$d ms · kesinti %4$d · taşma %5$d · sistem underrun %6$d</string>
+    <string name="nat_core_not_ready">Çekirdek hazır değil</string>
+    <string name="nat_fm_tune">FM: alıcı ayarlanamadı</string>
+    <string name="nat_tcp_connect">rtl_tcp sunucusuna bağlanılamadı</string>
+    <string name="nat_tcp_header">rtl_tcp başlığı alınamadı</string>
+    <string name="nat_tcp_lost">rtl_tcp bağlantısı koptu</string>
+    <string name="nat_tcp_fail">rtl_tcp bağlantısı kurulamadı</string>
+    <string name="nat_usb_open">rtlsdr_open_fd başarısız</string>
+    <string name="nat_sample_rate">örnekleme hızı ayarlanamadı</string>
+    <string name="nat_usb_read">USB okuma hatası (dongle çıkarılmış olabilir)</string>
+    <string name="nat_dab_core">DAB çekirdeği başlatılamadı</string>
+    <string name="nat_no_dongle">RTL-SDR bağlı değil</string>
+    <string name="nat_open_fail">RTL-SDR açılamadı</string>
+    <string name="menu_look_t">GÜNDÜZ / GECE MODU</string>
+    <string name="look_day">Gündüz</string>
+    <string name="look_night">Gece</string>
+    <string name="set_logos">İstasyon logolarını internetten getir</string>
+    <string-array name="rds_pty">
+        <item></item>
+        <item>Haberler</item>
+        <item>Güncel Olaylar</item>
+        <item>Bilgi</item>
+        <item>Spor</item>
+        <item>Eğitim</item>
+        <item>Dram</item>
+        <item>Kültür</item>
+        <item>Bilim</item>
+        <item>Çeşitli</item>
+        <item>Pop Müzik</item>
+        <item>Rock Müzik</item>
+        <item>Hafif Müzik</item>
+        <item>Hafif Klasik</item>
+        <item>Klasik Müzik</item>
+        <item>Diğer Müzik</item>
+        <item>Hava Durumu</item>
+        <item>Ekonomi</item>
+        <item>Çocuk</item>
+        <item>Toplum</item>
+        <item>Din</item>
+        <item>Telefonlu Yayın</item>
+        <item>Seyahat</item>
+        <item>Boş Zaman</item>
+        <item>Caz</item>
+        <item>Country</item>
+        <item>Ulusal Müzik</item>
+        <item>Eski Parçalar</item>
+        <item>Halk Müziği</item>
+        <item>Belgesel</item>
+        <item>Alarm Testi</item>
+        <item>Alarm</item>
+    </string-array>
+</resources>

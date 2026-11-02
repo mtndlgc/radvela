@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Otomatik üretildi (i18n/gen.py). Elle düzenlemeyin. -->
+<resources>
+    <string name="color_red">أحمر</string>
+    <string name="color_amber">كهرماني</string>
+    <string name="color_green">أخضر</string>
+    <string name="color_blue">أزرق</string>
+    <string name="color_cyan">سماوي</string>
+    <string name="btn_list">القائمة</string>
+    <string name="btn_fav">المفضلة</string>
+    <string name="btn_rec">تسجيل</string>
+    <string name="btn_step">0.1 MHz</string>
+    <string name="btn_manual_fm">ضبط يدوي</string>
+    <string name="btn_manual_dab">قناة يدوية</string>
+    <string name="btn_scan_dab">بحث DAB+</string>
+    <string name="btn_gain_opt">ضبط الكسب</string>
+    <string name="btn_stop_scan">إيقاف البحث</string>
+    <string name="cap_prev">السابق</string>
+    <string name="cap_next">التالي</string>
+    <string name="cap_manual">يدوي</string>
+    <string name="cap_scan">بحث</string>
+    <string name="cap_gain">الكسب</string>
+    <string name="list_title">المحطات</string>
+    <string name="list_scan">بحث تلقائي</string>
+    <string name="list_clear">مسح القائمة</string>
+    <string name="menu_title">القائمة</string>
+    <string name="menu_list_t">قائمة المحطات</string>
+    <string name="menu_list_s">محطات FM وDAB+ المحفوظة</string>
+    <string name="menu_scan_fm_t">بحث تلقائي (FM)</string>
+    <string name="menu_scan_fm_s">مسح نطاق 87.5–108 MHz</string>
+    <string name="menu_scan_dab_t">بحث تلقائي (DAB+)</string>
+    <string name="menu_scan_dab_s">مسح جميع قنوات النطاق III</string>
+    <string name="menu_manual_t">ضبط يدوي</string>
+    <string name="menu_manual_s">اختيار تردد أو قناة</string>
+    <string name="menu_add_t">إضافة إلى القائمة</string>
+    <string name="menu_add_s">إضافة محطة FM الحالية إلى القائمة</string>
+    <string name="menu_clear_t">مسح القائمة</string>
+    <string name="menu_clear_s">حذف قائمة النوع المحدد</string>
+    <string name="menu_rec_start_t">بدء التسجيل</string>
+    <string name="menu_rec_stop_t">إيقاف التسجيل</string>
+    <string name="menu_rec_s">يسجّل الصوت بصيغة WAV (Music/Radvela)</string>
+    <string name="menu_theme_t">مظهر الواجهة</string>
+    <string name="menu_theme_s">الحالي: %1$s (المس للتبديل)</string>
+    <string name="theme_classic">تناظري كلاسيكي</string>
+    <string name="theme_modern">عصري</string>
+    <string name="menu_color_t">نظام الألوان</string>
+    <string name="menu_color_s">الحالي: %1$s</string>
+    <string name="menu_lang_t">اللغة / LANGUAGE</string>
+    <string name="menu_lang_s">الحالي: %1$s</string>
+    <string name="lang_title">اختيار اللغة / SELECT LANGUAGE</string>
+    <string name="lang_auto">تلقائي (النظام)</string>
+    <string name="menu_gain_t">تحسين كسب DAB+</string>
+    <string name="menu_gain_s">يجد الكسب الذي يعطي أعلى SNR على القناة الحالية</string>
+    <string name="menu_settings_t">الإعدادات</string>
+    <string name="menu_settings_s">الكسب وppm ومستوى الصوت وأحادي</string>
+    <string name="menu_diag_t">التشخيص</string>
+    <string name="menu_diag_s">حالة الصوت والكسب وIQ</string>
+    <string name="menu_about_t">حول</string>
+    <string name="menu_about_s">الإصدار والترخيص</string>
+    <string name="confirm_clear_title">حذف قائمة %1$s</string>
+    <string name="confirm_clear_msg">سيتم حذف جميع محطات %1$s المحفوظة. هل تؤكد؟</string>
+    <string name="act_cancel">إلغاء</string>
+    <string name="act_delete">حذف</string>
+    <string name="act_listen">استماع</string>
+    <string name="act_ok">موافق</string>
+    <string name="act_close">إغلاق</string>
+    <string name="sheet_dab_channel">اختيار قناة DAB+</string>
+    <string name="sheet_fm_freq">تردد FM</string>
+    <string name="nudge_m1">−1</string>
+    <string name="nudge_m01">−0.1</string>
+    <string name="nudge_p01">+0.1</string>
+    <string name="nudge_p1">+1</string>
+    <string name="set_agc">الكسب التلقائي (AGC)</string>
+    <string name="set_gain">الكسب اليدوي</string>
+    <string name="set_ppm">تصحيح التردد (ppm)</string>
+    <string name="set_volume">مستوى الصوت البرمجي</string>
+    <string name="set_mono">FM: فرض الصوت الأحادي</string>
+    <string name="set_deemph">FM: إزالة التوكيد 75 µs (الأمريكيتان)؛ إيقاف = 50 µs</string>
+    <string name="set_autoplay">تشغيل آخر محطة عند توصيل الدونغل</string>
+    <string name="set_boot">تشغيل الراديو تلقائيًا عند تشغيل السيارة</string>
+    <string name="set_colors">نظام الألوان</string>
+    <string name="fmt_percent">%1$d%%</string>
+    <string name="diag_audio">الصوت: %1$s</string>
+    <string name="diag_usb">USB: %1$s</string>
+    <string name="diag_mode">الوضع: %1$s</string>
+    <string name="diag_fm">إشارة FM: %1$.0f dB، ستيريو=%2$b، RDS=%3$b</string>
+    <string name="diag_dab">DAB: SNR %1$.1f dB، المزامنة=%2$d، %3$s\nأخطاء FIC=%4$d، CRC الصوت: سليم=%5$d خطأ=%6$d، أخطاء RS=%7$d</string>
+    <string name="about_text">مستقبل FM (ستيريو، RDS) وDAB/DAB+. يتصل دونغل RTL-SDR مباشرةً عبر USB.\n\nGPL-2.0 أو أحدث. نواة DAB: welle.io (GPL). MP2: mpg123.\nالتفاصيل: NOTICE.md\nالشعارات: radio-browser.info</string>
+    <string name="msg_dab_list_empty">قائمة DAB+ فارغة: القائمة &gt; بحث تلقائي (DAB+)</string>
+    <string name="empty_fav">لا توجد محطات مفضلة.\nاضغط مطولًا على محطة في القائمة لإضافتها إلى المفضلة.</string>
+    <string name="empty_list">القائمة فارغة.\nاعثر على المحطات عبر البحث التلقائي.</string>
+    <string name="empty_dab">لا توجد محطات DAB+. امسح القنوات عبر القائمة &gt; بحث تلقائي (DAB+).</string>
+    <string name="empty_fm">لا توجد محطات FM. امسح النطاق عبر القائمة &gt; بحث تلقائي (FM).</string>
+    <string name="dabq_nosignal">لا توجد إشارة</string>
+    <string name="dabq_head">SNR %1$.0f dB  ·  أخطاء FIC %2$d  ·  إطارات الصوت %3$d سليمة / %4$d تالفة</string>
+    <string name="dabq_nosync">لم يتم العثور على إشارة على هذه القناة. ضع الهوائي بجوار نافذة أو في مكان مرتفع داخل السيارة.</string>
+    <string name="dabq_weak">إشارة ضعيفة: يتعذر فك ترميز معلومات المجموعة، لذلك لا يوجد صوت. اجعل الهوائي عموديًا (نحو 33 سم) وفي مكان مرتفع؛ ويساعد كابل تمديد USB ومرشّح DAB.</string>
+    <string name="dabq_waiting">بانتظار بيانات الخدمة…</string>
+    <string name="dabq_errors">%1$d%% من إطارات الصوت تالفة: الإشارة على الحد، وقد ينقطع الصوت أو يغيب.</string>
+    <string name="dabq_nodecoder">تصل إطارات الصوت لكن المُفكِّك لم يبدأ (ربما لا يكون ترميز هذه الخدمة مدعومًا).</string>
+    <string name="status_starting">جارٍ البدء…</string>
+    <string name="scan_fm_running">جارٍ مسح FM…</string>
+    <string name="scan_dab_running">جارٍ مسح DAB+…</string>
+    <string name="list_pos">في القائمة: %1$d / %2$d</string>
+    <string name="list_none">ليست في القائمة</string>
+    <string name="chip_stereo">ستيريو</string>
+    <string name="chip_mono">أحادي</string>
+    <string name="chip_sync">متزامن</string>
+    <string name="chip_weak">ضعيف</string>
+    <string name="chip_nosignal">لا إشارة</string>
+    <string name="chip_off">متوقف</string>
+    <string name="chip_snr">SNR %1$.0f dB</string>
+    <string name="sub_channel">القناة %1$s</string>
+    <string name="row_dab_channel">DAB%1$s · القناة %2$s</string>
+    <string name="sub_idle_ready">اضغط تشغيل، أو اختر محطة، أو ابدأ البحث التلقائي</string>
+    <string name="sub_idle_noconn">وصّل دونغل RTL-SDR بمنفذ USB</string>
+    <string name="lc_stereo">ستيريو</string>
+    <string name="lc_mono">أحادي</string>
+    <string name="usb_searching">جارٍ البحث عن الدونغل…</string>
+    <string name="usb_removed">تمت إزالة الدونغل</string>
+    <string name="usb_notfound">لم يتم العثور على دونغل RTL-SDR</string>
+    <string name="usb_perm_wait">بانتظار إذن USB…</string>
+    <string name="usb_perm_denied">تم رفض إذن USB</string>
+    <string name="usb_opening">جارٍ فتح الدونغل…</string>
+    <string name="usb_open_fail">تعذّر فتح جهاز USB</string>
+    <string name="usb_rtl_fail">تعذّر فتح RTL-SDR: %1$s</string>
+    <string name="usb_connected">RTL-SDR متصل</string>
+    <string name="msg_fm_fail">تعذّر بدء FM</string>
+    <string name="msg_dab_fail">تعذّر بدء DAB+</string>
+    <string name="msg_rec_saved">تم حفظ التسجيل: Music/Radvela/%1$s</string>
+    <string name="msg_rec_stopped">تم إيقاف التسجيل</string>
+    <string name="msg_rec_need_play">شغّل محطة أولًا للتسجيل</string>
+    <string name="msg_rec_fail">تعذّر بدء التسجيل</string>
+    <string name="msg_add_need_fm">شغّل محطة FM لإضافتها إلى القائمة</string>
+    <string name="msg_add_dup">هذه المحطة موجودة بالفعل في القائمة</string>
+    <string name="msg_added">تمت إضافة %1$s إلى القائمة</string>
+    <string name="msg_cleared">تم مسح قائمة المحطات</string>
+    <string name="msg_tuning_dab">الاستماع إلى القناة %1$s؛ جارٍ البحث عن الخدمات…</string>
+    <string name="msg_gain_need_dab">شغّل محطة DAB+ أولًا وانتظر وصول الإشارة</string>
+    <string name="msg_gain_best">أفضل كسب: %1$d / %2$d (SNR %3$.1f dB). تم إيقاف AGC؛ يمكنك تشغيله من الإعدادات.</string>
+    <string name="msg_gain_search">جارٍ البحث عن الكسب %1$d/%2$d</string>
+    <string name="msg_gain_refine">جارٍ البحث عن الكسب %1$d/%2$d (ضبط دقيق)</string>
+    <string name="msg_conn_lost">انقطع الاتصال بـ RTL-SDR</string>
+    <string name="msg_dab_saved">تم حفظ %1$d خدمة DAB</string>
+    <string name="msg_fm_none">لم يتم العثور على محطات FM (تحقق من الهوائي)</string>
+    <string name="msg_fm_found">تم العثور على %1$d محطة FM</string>
+    <string name="msg_dab_none">لم يتم العثور على بث DAB+ (تحقق من الهوائي)</string>
+    <string name="msg_dab_found">تم العثور على %1$d خدمة DAB</string>
+    <string name="notif_ready">جاهز</string>
+    <string name="notif_prev">السابق</string>
+    <string name="notif_next">التالي</string>
+    <string name="notif_close">إغلاق</string>
+    <string name="notif_channel">الراديو</string>
+    <string name="diag_gain">الكسب %1$s dB، المستوى %2$d · تجاوز IQ %3$d</string>
+    <string name="diag_overrun">(المعالجة لا تواكب!)</string>
+    <string name="audio_off">مخرج الصوت متوقف</string>
+    <string name="audio_stats">%1$d Hz · المخزن المؤقت %2$d/%3$d ms · انقطاعات %4$d · فائض %5$d · انقطاعات النظام %6$d</string>
+    <string name="nat_core_not_ready">النواة غير جاهزة</string>
+    <string name="nat_fm_tune">FM: تعذّر ضبط المستقبل</string>
+    <string name="nat_tcp_connect">تعذّر الاتصال بخادم rtl_tcp</string>
+    <string name="nat_tcp_header">تعذّر قراءة ترويسة rtl_tcp</string>
+    <string name="nat_tcp_lost">انقطع اتصال rtl_tcp</string>
+    <string name="nat_tcp_fail">تعذّر إنشاء اتصال rtl_tcp</string>
+    <string name="nat_usb_open">فشل rtlsdr_open_fd</string>
+    <string name="nat_sample_rate">تعذّر ضبط معدل العيّنة</string>
+    <string name="nat_usb_read">خطأ في قراءة USB (ربما تم فصل الدونغل)</string>
+    <string name="nat_dab_core">تعذّر بدء نواة DAB</string>
+    <string name="nat_no_dongle">RTL-SDR غير متصل</string>
+    <string name="nat_open_fail">تعذّر فتح RTL-SDR</string>
+    <string name="menu_look_t">الوضع النهاري / الليلي</string>
+    <string name="look_day">نهاري</string>
+    <string name="look_night">ليلي</string>
+    <string name="set_logos">تنزيل شعارات المحطات من الإنترنت</string>
+    <string-array name="rds_pty">
+        <item></item>
+        <item>أخبار</item>
+        <item>شؤون جارية</item>
+        <item>معلومات</item>
+        <item>رياضة</item>
+        <item>تعليم</item>
+        <item>دراما</item>
+        <item>ثقافة</item>
+        <item>علوم</item>
+        <item>منوعات</item>
+        <item>موسيقى بوب</item>
+        <item>موسيقى روك</item>
+        <item>موسيقى خفيفة</item>
+        <item>كلاسيكي خفيف</item>
+        <item>موسيقى كلاسيكية</item>
+        <item>موسيقى أخرى</item>
+        <item>الطقس</item>
+        <item>اقتصاد</item>
+        <item>أطفال</item>
+        <item>شؤون اجتماعية</item>
+        <item>دين</item>
+        <item>مداخلات هاتفية</item>
+        <item>سفر</item>
+        <item>ترفيه</item>
+        <item>جاز</item>
+        <item>كانتري</item>
+        <item>موسيقى وطنية</item>
+        <item>أغانٍ قديمة</item>
+        <item>موسيقى شعبية</item>
+        <item>وثائقي</item>
+        <item>اختبار إنذار</item>
+        <item>إنذار</item>
+    </string-array>
+</resources>

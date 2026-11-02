@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sleep_t">SLEEP-TIMER</string>
+    <string name="sleep_s">Stoppt die Wiedergabe nach einer festen Zeit</string>
+    <string name="sleep_left">noch %1$d Min.</string>
+    <string name="sleep_off">Aus</string>
+    <string name="sleep_min">%1$d Minuten</string>
+    <string name="msg_sleep_set">Radio stoppt in %1$d Minuten</string>
+    <string name="msg_sleep_end">Sleep-Timer abgelaufen</string>
+    <string name="eq_t">EQUALIZER</string>
+    <string name="eq_flat">Linear</string>
+    <string name="eq_bass">Bass-Boost</string>
+    <string name="eq_vocal">Sprache</string>
+    <string name="eq_treble">Höhen-Boost</string>
+    <string name="eq_loud">Loudness</string>
+    <string name="backup_t">SENDER SICHERN</string>
+    <string name="backup_s">Sender und Favoriten in Datei speichern</string>
+    <string name="restore_t">SENDER WIEDERHERSTELLEN</string>
+    <string name="restore_s">Sender und Favoriten aus Datei laden</string>
+    <string name="msg_backup_ok">Sender gespeichert</string>
+    <string name="msg_restore_ok">Sender wiederhergestellt</string>
+    <string name="msg_file_fail">Diese Datei konnte nicht gelesen oder geschrieben werden</string>
+    <string name="help_t">HILFE</string>
+    <string name="help_s">Was du brauchst und wie du verbindest</string>
+    <string name="help_body">Radvela empfängt FM und DAB+ direkt, ohne Internetstream. Du brauchst:\n\n1. Einen RTL-SDR-USB-Stick (RTL2832U).\n2. Einen USB-OTG-Adapter, falls dein Gerät keinen großen USB-Anschluss hat.\n3. Eine Antenne: etwa 33 cm senkrecht für DAB+, 75 cm für FM.\n\nStick einstecken, im Berechtigungsfenster IMMER wählen, dann im Menü SENDERSUCHE starten. Dein Gerät muss USB-Host unterstützen, und DAB+ braucht Empfang vor Ort.</string>
+    <string name="privacy_t">DATENSCHUTZ</string>
+    <string name="privacy_s">Was die App sendet und speichert</string>
+    <string name="privacy_body">Radvela hat kein Konto, keine Werbung und keine Analyse. Der Empfang funktioniert offline, deine Sender bleiben auf diesem Gerät.\n\nSind Senderlogos aktiv (Einstellungen), werden Sendernamen an radio-browser.info gesendet; dieser Dienst sieht wie jede Website auch deine IP-Adresse. Du kannst das in den Einstellungen abschalten. Logos können auch von der Website des Senders geladen werden.\n\nAufnahmen werden nur auf deinem Gerät gespeichert.</string>
+    <string name="about_source">Quellcode: %1$s</string>
+</resources>

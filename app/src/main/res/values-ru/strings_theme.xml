@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">ГАЛЕРЕЯ ТЕМ</string>
+    <string name="set_anim">Простые анимации</string>
+    <string name="set_list">Стена станций</string>
+    <string name="list_cards">Карточки</string>
+    <string name="list_compact">Компактно</string>
+    <string name="list_rows">Строки</string>
+    <string name="set_wood">Classic Analog: деревянный фон</string>
+    <string name="vol_t">ЗВУК</string>
+    <string name="vol_s">Громкость и отключение звука</string>
+    <string name="act_mute">БЕЗ ЗВУКА</string>
+    <string name="act_unmute">ВКЛЮЧИТЬ ЗВУК</string>
+    <string name="tab_fav">Избранное</string>
+    <string name="td_oem">Чёрный и антрацит, как заводской экран</string>
+    <string name="td_modern">OLED-чёрный и живой спектр звука</string>
+    <string name="td_classic">Круглая шкала и подвижная стрелка</string>
+    <string name="td_minimal">Огромное название и кнопки для вождения</string>
+    <string name="td_wall">Стена из карточек станций</string>
+    <string name="usb_stuck">Донгл не отвечает. Отключите его и подключите снова.</string>
+    <string name="nat_no_aac">На этом устройстве нет совместимого декодера AAC, звук DAB+ воспроизвести нельзя.</string>
+</resources>

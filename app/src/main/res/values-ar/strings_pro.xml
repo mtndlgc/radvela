@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sleep_t">مؤقت النوم</string>
+    <string name="sleep_s">يوقف التشغيل بعد مدة محددة</string>
+    <string name="sleep_left">متبقٍ %1$d د</string>
+    <string name="sleep_off">إيقاف</string>
+    <string name="sleep_min">%1$d دقيقة</string>
+    <string name="msg_sleep_set">سيتوقف الراديو بعد %1$d دقيقة</string>
+    <string name="msg_sleep_end">انتهى مؤقت النوم</string>
+    <string name="eq_t">المعادل</string>
+    <string name="eq_flat">مسطّح</string>
+    <string name="eq_bass">تعزيز الجهير</string>
+    <string name="eq_vocal">الكلام</string>
+    <string name="eq_treble">تعزيز الحدة</string>
+    <string name="eq_loud">الجهارة</string>
+    <string name="backup_t">نسخ المحطات احتياطيًا</string>
+    <string name="backup_s">حفظ المحطات والمفضلة في ملف</string>
+    <string name="restore_t">استعادة المحطات</string>
+    <string name="restore_s">تحميل المحطات والمفضلة من ملف</string>
+    <string name="msg_backup_ok">تم حفظ المحطات</string>
+    <string name="msg_restore_ok">تمت استعادة المحطات</string>
+    <string name="msg_file_fail">تعذّرت قراءة هذا الملف أو الكتابة فيه</string>
+    <string name="help_t">مساعدة</string>
+    <string name="help_s">ما تحتاجه وكيفية التوصيل</string>
+    <string name="help_body">يستقبل Radvela إذاعات FM وDAB+ مباشرة دون بث عبر الإنترنت. تحتاج إلى:\n\n1. دونجل USB من نوع RTL-SDR (RTL2832U).\n2. محوّل USB OTG إذا لم يكن في جهازك منفذ USB كامل الحجم.\n3. هوائي: نحو 33 سم عموديًا لـ DAB+، و75 سم لـ FM.\n\nوصّل الدونجل، واختر «دائمًا» في نافذة الإذن، ثم شغّل البحث التلقائي من القائمة. يجب أن يدعم جهازك وضع USB المضيف، ويحتاج DAB+ إلى تغطية محلية.</string>
+    <string name="privacy_t">الخصوصية</string>
+    <string name="privacy_s">ما يرسله التطبيق ويخزنه</string>
+    <string name="privacy_body">لا يحتوي Radvela على حسابات أو إعلانات أو تحليلات. يعمل الاستقبال دون اتصال وتبقى محطاتك على هذا الجهاز.\n\nإذا كانت شعارات المحطات مفعّلة (الإعدادات)، تُرسل أسماء المحطات إلى radio-browser.info؛ وترى هذه الخدمة عنوان IP الخاص بك مثل أي موقع ويب. يمكنك إيقاف ذلك من الإعدادات. قد تُنزَّل الشعارات أيضًا من موقع المحطة نفسها.\n\nتُحفظ التسجيلات على جهازك فقط.</string>
+    <string name="about_source">الشيفرة المصدرية: %1$s</string>
+</resources>

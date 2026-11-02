@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">معرض السمات</string>
+    <string name="set_anim">رسوم متحركة بسيطة</string>
+    <string name="set_list">جدار المحطات</string>
+    <string name="list_cards">بطاقات</string>
+    <string name="list_compact">مضغوط</string>
+    <string name="list_rows">صفوف</string>
+    <string name="set_wood">Classic Analog: خلفية خشبية</string>
+    <string name="vol_t">الصوت</string>
+    <string name="vol_s">مستوى الصوت وكتمه</string>
+    <string name="act_mute">كتم</string>
+    <string name="act_unmute">إلغاء الكتم</string>
+    <string name="tab_fav">المفضلة</string>
+    <string name="td_oem">أسود وأنثراسيت بمظهر شاشة المصنع</string>
+    <string name="td_modern">أسود OLED مع طيف صوتي مباشر</string>
+    <string name="td_classic">قرص دائري ومؤشر متحرك</string>
+    <string name="td_minimal">اسم وأزرار ضخمة للقيادة</string>
+    <string name="td_wall">جدار من بطاقات المحطات</string>
+    <string name="usb_stuck">الدونجل لا يستجيب. افصله ثم أعد توصيله.</string>
+    <string name="nat_no_aac">لا يحتوي هذا الجهاز على مفكك AAC متوافق، لذا لا يمكن تشغيل صوت DAB+.</string>
+</resources>

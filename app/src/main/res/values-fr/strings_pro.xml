@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sleep_t">MINUTEUR</string>
+    <string name="sleep_s">Arrête la lecture après un délai choisi</string>
+    <string name="sleep_left">%1$d min restantes</string>
+    <string name="sleep_off">Désactivé</string>
+    <string name="sleep_min">%1$d minutes</string>
+    <string name="msg_sleep_set">La radio s\'arrêtera dans %1$d minutes</string>
+    <string name="msg_sleep_end">Minuteur terminé</string>
+    <string name="eq_t">ÉGALISEUR</string>
+    <string name="eq_flat">Neutre</string>
+    <string name="eq_bass">Basses renforcées</string>
+    <string name="eq_vocal">Voix</string>
+    <string name="eq_treble">Aigus renforcés</string>
+    <string name="eq_loud">Loudness</string>
+    <string name="backup_t">SAUVEGARDER LES STATIONS</string>
+    <string name="backup_s">Enregistrer stations et favoris dans un fichier</string>
+    <string name="restore_t">RESTAURER LES STATIONS</string>
+    <string name="restore_s">Charger stations et favoris depuis un fichier</string>
+    <string name="msg_backup_ok">Stations enregistrées</string>
+    <string name="msg_restore_ok">Stations restaurées</string>
+    <string name="msg_file_fail">Impossible de lire ou d\'écrire ce fichier</string>
+    <string name="help_t">AIDE</string>
+    <string name="help_s">Matériel requis et connexion</string>
+    <string name="help_body">Radvela reçoit la FM et le DAB+ directement, sans flux Internet. Il vous faut :\n\n1. Une clé USB RTL-SDR (RTL2832U).\n2. Un adaptateur USB OTG si votre appareil n\'a pas de port USB standard.\n3. Une antenne : environ 33 cm verticale pour le DAB+, 75 cm pour la FM.\n\nBranchez la clé, choisissez TOUJOURS dans la fenêtre d\'autorisation, puis lancez la RECHERCHE AUTO depuis le menu. Votre appareil doit prendre en charge l\'hôte USB et le DAB+ nécessite une couverture locale.</string>
+    <string name="privacy_t">CONFIDENTIALITÉ</string>
+    <string name="privacy_s">Ce que l\'application envoie et conserve</string>
+    <string name="privacy_body">Radvela n\'a ni compte, ni publicité, ni statistiques. La réception fonctionne hors ligne et vos stations restent sur cet appareil.\n\nSi les logos sont activés (Réglages), les noms de stations sont envoyés à radio-browser.info ; ce service voit aussi votre adresse IP, comme tout site web. Vous pouvez le désactiver dans les Réglages. Les logos peuvent aussi être téléchargés depuis le site de la station.\n\nLes enregistrements restent uniquement sur votre appareil.</string>
+    <string name="about_source">Code source : %1$s</string>
+</resources>

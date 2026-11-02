@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">GALERÍA DE TEMAS</string>
+    <string name="set_anim">Animaciones simples</string>
+    <string name="set_list">Muro de emisoras</string>
+    <string name="list_cards">Tarjetas</string>
+    <string name="list_compact">Compacto</string>
+    <string name="list_rows">Filas</string>
+    <string name="set_wood">Classic Analog: fondo de madera</string>
+    <string name="vol_t">SONIDO</string>
+    <string name="vol_s">Volumen y silencio</string>
+    <string name="act_mute">SILENCIAR</string>
+    <string name="act_unmute">ACTIVAR SONIDO</string>
+    <string name="tab_fav">Favoritos</string>
+    <string name="td_oem">Negro y antracita, aspecto de fábrica</string>
+    <string name="td_modern">Negro OLED con espectro de audio en vivo</string>
+    <string name="td_classic">Dial redondo y aguja móvil</string>
+    <string name="td_minimal">Nombre y botones enormes para conducir</string>
+    <string name="td_wall">Un muro de tarjetas de emisoras</string>
+    <string name="usb_stuck">El dongle no responde. Desconéctalo y vuelve a conectarlo.</string>
+    <string name="nat_no_aac">Este dispositivo no tiene un decodificador AAC compatible y no puede reproducir audio DAB+.</string>
+</resources>

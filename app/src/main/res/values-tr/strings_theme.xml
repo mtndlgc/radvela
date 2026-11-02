@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">TEMA GALERİSİ</string>
+    <string name="set_anim">Basit animasyonlar</string>
+    <string name="set_list">İstasyon duvarı</string>
+    <string name="list_cards">Kartlar</string>
+    <string name="list_compact">Sıkı</string>
+    <string name="list_rows">Satırlar</string>
+    <string name="set_wood">Classic Analog: ahşap zemin</string>
+    <string name="vol_t">SES</string>
+    <string name="vol_s">Ses seviyesi ve sessize alma</string>
+    <string name="act_mute">SESSİZ</string>
+    <string name="act_unmute">SESİ AÇ</string>
+    <string name="tab_fav">Favoriler</string>
+    <string name="td_oem">Siyah ve antrasit, fabrika ekranı görünümü</string>
+    <string name="td_modern">OLED siyahı, canlı ses spektrumu</string>
+    <string name="td_classic">Dairesel kadran ve hareketli ibre</string>
+    <string name="td_minimal">Sürüş için dev ad ve düğmeler</string>
+    <string name="td_wall">İstasyon kartlarından oluşan duvar</string>
+    <string name="usb_stuck">Dongle yanıt vermiyor. Çıkarıp yeniden takın.</string>
+    <string name="nat_no_aac">Bu cihazda uyumlu AAC çözücü yok, DAB+ sesi çalınamıyor.</string>
+</resources>

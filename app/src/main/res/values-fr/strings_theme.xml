@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">GALERIE DE THÈMES</string>
+    <string name="set_anim">Animations simples</string>
+    <string name="set_list">Mur de stations</string>
+    <string name="list_cards">Cartes</string>
+    <string name="list_compact">Compact</string>
+    <string name="list_rows">Lignes</string>
+    <string name="set_wood">Classic Analog : fond bois</string>
+    <string name="vol_t">SON</string>
+    <string name="vol_s">Volume et sourdine</string>
+    <string name="act_mute">SOURDINE</string>
+    <string name="act_unmute">RÉTABLIR LE SON</string>
+    <string name="tab_fav">Favoris</string>
+    <string name="td_oem">Noir et anthracite, style écran d\'origine</string>
+    <string name="td_modern">Noir OLED et spectre audio en direct</string>
+    <string name="td_classic">Cadran rond et aiguille mobile</string>
+    <string name="td_minimal">Nom et boutons géants pour la conduite</string>
+    <string name="td_wall">Un mur de cartes de stations</string>
+    <string name="usb_stuck">La clé ne répond pas. Débranchez-la puis rebranchez-la.</string>
+    <string name="nat_no_aac">Cet appareil n\'a pas de décodeur AAC compatible : le son DAB+ ne peut pas être lu.</string>
+</resources>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Otomatik üretildi (i18n/gen.py). Elle düzenlemeyin. -->
+<resources>
+    <string name="app_name">Radvela</string>
+    <string name="color_red">Red</string>
+    <string name="color_amber">Amber</string>
+    <string name="color_green">Green</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_cyan">Cyan</string>
+    <string name="btn_list">LIST</string>
+    <string name="btn_fav">FAVORITE</string>
+    <string name="btn_rec">REC</string>
+    <string name="btn_step">0.1 MHz</string>
+    <string name="btn_manual_fm">MANUAL TUNE</string>
+    <string name="btn_manual_dab">MANUAL CHANNEL</string>
+    <string name="btn_scan_dab">DAB+ SCAN</string>
+    <string name="btn_gain_opt">FIND GAIN</string>
+    <string name="btn_stop_scan">STOP SCAN</string>
+    <string name="cap_prev">PREV</string>
+    <string name="cap_next">NEXT</string>
+    <string name="cap_manual">MANUAL</string>
+    <string name="cap_scan">SCAN</string>
+    <string name="cap_gain">GAIN</string>
+    <string name="list_title">STATIONS</string>
+    <string name="list_scan">AUTO SCAN</string>
+    <string name="list_clear">CLEAR LIST</string>
+    <string name="menu_title">MENU</string>
+    <string name="menu_list_t">STATION LIST</string>
+    <string name="menu_list_s">Saved FM and DAB+ stations</string>
+    <string name="menu_scan_fm_t">AUTO SCAN (FM)</string>
+    <string name="menu_scan_fm_s">Scan the 87.5–108 MHz band</string>
+    <string name="menu_scan_dab_t">AUTO SCAN (DAB+)</string>
+    <string name="menu_scan_dab_s">Scan all Band III channels</string>
+    <string name="menu_manual_t">MANUAL TUNING</string>
+    <string name="menu_manual_s">Choose a frequency or channel</string>
+    <string name="menu_add_t">ADD TO LIST</string>
+    <string name="menu_add_s">Add the playing FM station to the list</string>
+    <string name="menu_clear_t">CLEAR LIST</string>
+    <string name="menu_clear_s">Delete the list of the selected type</string>
+    <string name="menu_rec_start_t">START RECORDING</string>
+    <string name="menu_rec_stop_t">STOP RECORDING</string>
+    <string name="menu_rec_s">Records the audio as WAV (Music/Radvela)</string>
+    <string name="menu_theme_t">INTERFACE THEME</string>
+    <string name="menu_theme_s">Current: %1$s (tap to switch)</string>
+    <string name="theme_classic">Classic Analog</string>
+    <string name="theme_modern">Modern</string>
+    <string name="menu_color_t">COLOR SCHEME</string>
+    <string name="menu_color_s">Current: %1$s</string>
+    <string name="menu_lang_t">LANGUAGE</string>
+    <string name="menu_lang_s">Current: %1$s</string>
+    <string name="lang_title">SELECT LANGUAGE</string>
+    <string name="lang_auto">Automatic (system)</string>
+    <string name="menu_gain_t">DAB+ GAIN OPTIMIZATION</string>
+    <string name="menu_gain_s">Finds the gain that gives the highest SNR on the current channel</string>
+    <string name="menu_settings_t">SETTINGS</string>
+    <string name="menu_settings_s">Gain, ppm, volume, mono</string>
+    <string name="menu_diag_t">DIAGNOSTICS</string>
+    <string name="menu_diag_s">Audio, gain and IQ status</string>
+    <string name="menu_about_t">ABOUT</string>
+    <string name="menu_about_s">Version and license</string>
+    <string name="confirm_clear_title">DELETE %1$s LIST</string>
+    <string name="confirm_clear_msg">All saved %1$s stations will be deleted. Do you confirm?</string>
+    <string name="act_cancel">CANCEL</string>
+    <string name="act_delete">DELETE</string>
+    <string name="act_listen">LISTEN</string>
+    <string name="act_ok">OK</string>
+    <string name="act_close">CLOSE</string>
+    <string name="sheet_dab_channel">SELECT DAB+ CHANNEL</string>
+    <string name="sheet_fm_freq">FM FREQUENCY</string>
+    <string name="nudge_m1">−1</string>
+    <string name="nudge_m01">−0.1</string>
+    <string name="nudge_p01">+0.1</string>
+    <string name="nudge_p1">+1</string>
+    <string name="set_agc">Automatic gain (AGC)</string>
+    <string name="set_gain">Manual gain</string>
+    <string name="set_ppm">Frequency correction (ppm)</string>
+    <string name="set_volume">Software volume</string>
+    <string name="set_mono">FM: force mono</string>
+    <string name="set_deemph">FM: 75 µs de-emphasis (Americas); off = 50 µs</string>
+    <string name="set_autoplay">Play the last station when the dongle is plugged in</string>
+    <string name="set_boot">Start the radio automatically when the car starts</string>
+    <string name="set_colors">Color scheme</string>
+    <string name="fmt_percent">%1$d%%</string>
+    <string name="diag_audio">Audio: %1$s</string>
+    <string name="diag_usb">USB: %1$s</string>
+    <string name="diag_mode">Mode: %1$s</string>
+    <string name="diag_fm">FM signal: %1$.0f dB, stereo=%2$b, RDS=%3$b</string>
+    <string name="diag_dab">DAB: SNR %1$.1f dB, sync=%2$d, %3$s\nFIC errors=%4$d, audio CRC ok=%5$d err=%6$d, RS errors=%7$d</string>
+    <string name="about_text">FM (stereo, RDS) and DAB/DAB+ receiver. The RTL-SDR dongle connects directly over USB.\n\nGPL-2.0-or-later. DAB core: welle.io (GPL). MP2: mpg123.\nDetails: NOTICE.md\nLogos: radio-browser.info</string>
+    <string name="msg_dab_list_empty">DAB+ list is empty: MENU &gt; AUTO SCAN (DAB+)</string>
+    <string name="empty_fav">No favorite stations.\nLong-press a station in the list to add it to favorites.</string>
+    <string name="empty_list">The list is empty.\nUse AUTO SCAN to find stations.</string>
+    <string name="empty_dab">No DAB+ stations. Scan the channels with MENU &gt; AUTO SCAN (DAB+).</string>
+    <string name="empty_fm">No FM stations. Scan the band with MENU &gt; AUTO SCAN (FM).</string>
+    <string name="dabq_nosignal">No signal</string>
+    <string name="dabq_head">SNR %1$.0f dB  ·  FIC errors %2$d  ·  audio frames %3$d ok / %4$d bad</string>
+    <string name="dabq_nosync">No signal found on this channel. Move the antenna next to a window, or somewhere high inside the car.</string>
+    <string name="dabq_weak">Weak signal: the ensemble information cannot be decoded, so there is no audio. Hold the antenna vertically (about 33 cm) and high up; a USB extension cable and a DAB filter help.</string>
+    <string name="dabq_waiting">Waiting for service data…</string>
+    <string name="dabq_errors">%1$d%% of audio frames are corrupt: the signal is marginal, audio may drop out or be silent.</string>
+    <string name="dabq_nodecoder">Audio frames are arriving but the decoder did not start (this service\'s codec may be unsupported).</string>
+    <string name="status_starting">Starting…</string>
+    <string name="scan_fm_running">Scanning FM…</string>
+    <string name="scan_dab_running">Scanning DAB+…</string>
+    <string name="list_pos">In list: %1$d / %2$d</string>
+    <string name="list_none">Not in list</string>
+    <string name="chip_stereo">STEREO</string>
+    <string name="chip_mono">MONO</string>
+    <string name="chip_sync">SYNC</string>
+    <string name="chip_weak">WEAK</string>
+    <string name="chip_nosignal">NO SIGNAL</string>
+    <string name="chip_off">OFF</string>
+    <string name="chip_snr">SNR %1$.0f dB</string>
+    <string name="sub_channel">channel %1$s</string>
+    <string name="row_dab_channel">DAB%1$s · channel %2$s</string>
+    <string name="sub_idle_ready">Press PLAY, pick a station, or run an auto scan</string>
+    <string name="sub_idle_noconn">Plug the RTL-SDR dongle into the USB port</string>
+    <string name="lc_stereo">stereo</string>
+    <string name="lc_mono">mono</string>
+    <string name="usb_searching">Looking for the dongle…</string>
+    <string name="usb_removed">Dongle removed</string>
+    <string name="usb_notfound">RTL-SDR dongle not found</string>
+    <string name="usb_perm_wait">Waiting for USB permission…</string>
+    <string name="usb_perm_denied">USB permission denied</string>
+    <string name="usb_opening">Opening the dongle…</string>
+    <string name="usb_open_fail">Could not open the USB device</string>
+    <string name="usb_rtl_fail">Could not open RTL-SDR: %1$s</string>
+    <string name="usb_connected">RTL-SDR connected</string>
+    <string name="msg_fm_fail">Could not start FM</string>
+    <string name="msg_dab_fail">Could not start DAB+</string>
+    <string name="msg_rec_saved">Recording saved: Music/Radvela/%1$s</string>
+    <string name="msg_rec_stopped">Recording stopped</string>
+    <string name="msg_rec_need_play">Play a station first to record</string>
+    <string name="msg_rec_fail">Could not start recording</string>
+    <string name="msg_add_need_fm">Play an FM station to add it to the list</string>
+    <string name="msg_add_dup">This station is already in the list</string>
+    <string name="msg_added">%1$s added to the list</string>
+    <string name="msg_cleared">Station list cleared</string>
+    <string name="msg_tuning_dab">Listening on channel %1$s; searching for services…</string>
+    <string name="msg_gain_need_dab">Play a DAB+ station first and wait for the signal to arrive</string>
+    <string name="msg_gain_best">Best gain: %1$d / %2$d (SNR %3$.1f dB). AGC was turned off; you can turn it back on in Settings.</string>
+    <string name="msg_gain_search">Searching for gain %1$d/%2$d</string>
+    <string name="msg_gain_refine">Searching for gain %1$d/%2$d (fine tuning)</string>
+    <string name="msg_conn_lost">RTL-SDR connection lost</string>
+    <string name="msg_dab_saved">%1$d DAB services saved</string>
+    <string name="msg_fm_none">No FM stations found (check the antenna)</string>
+    <string name="msg_fm_found">%1$d FM stations found</string>
+    <string name="msg_dab_none">No DAB+ broadcast found (check the antenna)</string>
+    <string name="msg_dab_found">%1$d DAB services found</string>
+    <string name="notif_ready">Ready</string>
+    <string name="notif_prev">Previous</string>
+    <string name="notif_next">Next</string>
+    <string name="notif_close">Close</string>
+    <string name="notif_channel">Radio</string>
+    <string name="diag_gain">gain %1$s dB, level %2$d · IQ overruns %3$d</string>
+    <string name="diag_overrun">(processing cannot keep up!)</string>
+    <string name="audio_off">audio output off</string>
+    <string name="audio_stats">%1$d Hz · buffer %2$d/%3$d ms · underruns %4$d · overflows %5$d · system underruns %6$d</string>
+    <string name="nat_core_not_ready">Core not ready</string>
+    <string name="nat_fm_tune">FM: could not tune the receiver</string>
+    <string name="nat_tcp_connect">Could not connect to the rtl_tcp server</string>
+    <string name="nat_tcp_header">Could not read the rtl_tcp header</string>
+    <string name="nat_tcp_lost">rtl_tcp connection lost</string>
+    <string name="nat_tcp_fail">Could not establish the rtl_tcp connection</string>
+    <string name="nat_usb_open">rtlsdr_open_fd failed</string>
+    <string name="nat_sample_rate">could not set the sample rate</string>
+    <string name="nat_usb_read">USB read error (the dongle may have been unplugged)</string>
+    <string name="nat_dab_core">Could not start the DAB core</string>
+    <string name="nat_no_dongle">RTL-SDR is not connected</string>
+    <string name="nat_open_fail">Could not open RTL-SDR</string>
+    <string name="menu_look_t">DAY / NIGHT MODE</string>
+    <string name="look_day">Day</string>
+    <string name="look_night">Night</string>
+    <string name="set_logos">Download station logos from the internet</string>
+    <string-array name="rds_pty">
+        <item></item>
+        <item>News</item>
+        <item>Current Affairs</item>
+        <item>Information</item>
+        <item>Sport</item>
+        <item>Education</item>
+        <item>Drama</item>
+        <item>Culture</item>
+        <item>Science</item>
+        <item>Varied</item>
+        <item>Pop Music</item>
+        <item>Rock Music</item>
+        <item>Easy Listening</item>
+        <item>Light Classical</item>
+        <item>Classical</item>
+        <item>Other Music</item>
+        <item>Weather</item>
+        <item>Finance</item>
+        <item>Children\'s</item>
+        <item>Social Affairs</item>
+        <item>Religion</item>
+        <item>Phone-In</item>
+        <item>Travel</item>
+        <item>Leisure</item>
+        <item>Jazz</item>
+        <item>Country</item>
+        <item>National Music</item>
+        <item>Oldies</item>
+        <item>Folk Music</item>
+        <item>Documentary</item>
+        <item>Alarm Test</item>
+        <item>Alarm</item>
+    </string-array>
+</resources>

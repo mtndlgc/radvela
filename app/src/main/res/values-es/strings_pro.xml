@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sleep_t">TEMPORIZADOR</string>
+    <string name="sleep_s">Detiene la reproducción tras un tiempo</string>
+    <string name="sleep_left">Quedan %1$d min</string>
+    <string name="sleep_off">Desactivado</string>
+    <string name="sleep_min">%1$d minutos</string>
+    <string name="msg_sleep_set">La radio se detendrá en %1$d minutos</string>
+    <string name="msg_sleep_end">Temporizador terminado</string>
+    <string name="eq_t">ECUALIZADOR</string>
+    <string name="eq_flat">Plano</string>
+    <string name="eq_bass">Refuerzo de graves</string>
+    <string name="eq_vocal">Voz</string>
+    <string name="eq_treble">Refuerzo de agudos</string>
+    <string name="eq_loud">Loudness</string>
+    <string name="backup_t">COPIAR EMISORAS</string>
+    <string name="backup_s">Guarda emisoras y favoritos en un archivo</string>
+    <string name="restore_t">RESTAURAR EMISORAS</string>
+    <string name="restore_s">Carga emisoras y favoritos desde un archivo</string>
+    <string name="msg_backup_ok">Emisoras guardadas</string>
+    <string name="msg_restore_ok">Emisoras restauradas</string>
+    <string name="msg_file_fail">No se pudo leer o escribir este archivo</string>
+    <string name="help_t">AYUDA</string>
+    <string name="help_s">Qué necesitas y cómo conectar</string>
+    <string name="help_body">Radvela recibe FM y DAB+ directamente, sin streaming por Internet. Necesitas:\n\n1. Un dongle USB RTL-SDR (RTL2832U).\n2. Un adaptador USB OTG si tu dispositivo no tiene un puerto USB estándar.\n3. Una antena: unos 33 cm en vertical para DAB+, 75 cm para FM.\n\nConecta el dongle, elige SIEMPRE en la ventana de permiso y ejecuta la BÚSQUEDA AUTOMÁTICA desde el menú. Tu dispositivo debe admitir USB host y DAB+ requiere cobertura local.</string>
+    <string name="privacy_t">PRIVACIDAD</string>
+    <string name="privacy_s">Qué envía y guarda la aplicación</string>
+    <string name="privacy_body">Radvela no tiene cuentas, publicidad ni analíticas. La recepción funciona sin conexión y tus emisoras se quedan en este dispositivo.\n\nSi los logotipos están activados (Ajustes), los nombres de las emisoras se envían a radio-browser.info; ese servicio también ve tu dirección IP, como cualquier sitio web. Puedes desactivarlo en Ajustes. Los logotipos también pueden descargarse del sitio web de la emisora.\n\nLas grabaciones se guardan solo en tu dispositivo.</string>
+    <string name="about_source">Código fuente: %1$s</string>
+</resources>

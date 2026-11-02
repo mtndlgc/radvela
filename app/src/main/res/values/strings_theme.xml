@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gal_t">THEME GALLERY</string>
+    <string name="set_anim">Simple animations</string>
+    <string name="set_list">Station wall</string>
+    <string name="list_cards">Cards</string>
+    <string name="list_compact">Compact</string>
+    <string name="list_rows">Rows</string>
+    <string name="set_wood">Classic Analog: wood background</string>
+    <string name="vol_t">SOUND</string>
+    <string name="vol_s">Volume and mute</string>
+    <string name="act_mute">MUTE</string>
+    <string name="act_unmute">UNMUTE</string>
+    <string name="tab_fav">Favorites</string>
+    <string name="td_oem">Black and anthracite, factory-screen look</string>
+    <string name="td_modern">OLED black with live audio spectrum</string>
+    <string name="td_classic">Round dial and moving needle</string>
+    <string name="td_minimal">Huge name and buttons for driving</string>
+    <string name="td_wall">A wall of station cards</string>
+    <string name="usb_stuck">The dongle is not responding. Unplug it and plug it back in.</string>
+    <string name="nat_no_aac">This device has no compatible AAC decoder, so DAB+ audio cannot be played.</string>
+</resources>
