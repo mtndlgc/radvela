@@ -1,4 +1,4 @@
-# Radvela
+# Aethera
 
 **EN:** FM (stereo + RDS) and DAB / DAB+ radio for Android, driven directly by an RTL-SDR USB dongle (no separate "driver" app), plus a music player for the device, SD cards and USB drives.
 Built for car head units (BYD DiLink 3 and similar): large touch targets, preset buttons, rotation and split-screen support,

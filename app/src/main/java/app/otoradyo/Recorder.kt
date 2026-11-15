@@ -16,7 +16,7 @@ import java.util.Locale
 
 /**
  * Çalan sesi 16-bit stereo WAV dosyasına kaydeder.
- * Android 10+ ta Müzik/Radvela klasörüne (MediaStore), daha eskilerde uygulamaya özel Müzik klasörüne yazar.
+ * Android 10+ ta Müzik/Aethera klasörüne (MediaStore), daha eskilerde uygulamaya özel Müzik klasörüne yazar.
  */
 class Recorder(private val ctx: Context) {
     private var out: FileOutputStream? = null
@@ -36,13 +36,13 @@ class Recorder(private val ctx: Context) {
     fun start(sampleRate: Int, label: String): Boolean {
         if (active) return true
         val stamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
-        val base = ("Radvela_" + label + "_" + stamp).replace(Regex("[^A-Za-z0-9_.-]"), "_")
+        val base = ("Aethera_" + label + "_" + stamp).replace(Regex("[^A-Za-z0-9_.-]"), "_")
         try {
             if (Build.VERSION.SDK_INT >= 29) {
                 val cv = ContentValues().apply {
                     put(MediaStore.MediaColumns.DISPLAY_NAME, "$base.wav")
                     put(MediaStore.MediaColumns.MIME_TYPE, "audio/wav")
-                    put(MediaStore.MediaColumns.RELATIVE_PATH, "Music/Radvela")
+                    put(MediaStore.MediaColumns.RELATIVE_PATH, "Music/Aethera")
                     put(MediaStore.MediaColumns.IS_PENDING, 1)
                 }
                 val u = ctx.contentResolver.insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, cv) ?: return false

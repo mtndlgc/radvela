@@ -680,8 +680,10 @@ class MainActivity : Activity(), RadioService.Ui {
         }
         val top = FrameLayout(this).apply {
             addView(left, FrameLayout.LayoutParams(-2, -1, Gravity.START or Gravity.CENTER_VERTICAL))
-            if (land) addView(txt("RADVELA", tx(3.1f), alpha(Pal.WOOD_TEXT, 0xEB), true).apply { letterSpacing = 0.12f },
-                FrameLayout.LayoutParams(-2, -2, Gravity.CENTER))
+            if (land) addView(txt("AETHERA", tx(3.1f), alpha(Pal.WOOD_TEXT, 0xEB), true).apply {
+                letterSpacing = 0.15f
+                typeface = Typeface.DEFAULT_BOLD
+            }, FrameLayout.LayoutParams(-2, -2, Gravity.CENTER))
             addView(right, FrameLayout.LayoutParams(-2, -1, Gravity.END or Gravity.CENTER_VERTICAL))
         }
         mainPage.addView(top, lpm(-1, m(7.4f), 0f, 0, 0, 0, m(1.2f)))
@@ -1248,7 +1250,7 @@ class MainActivity : Activity(), RadioService.Ui {
         val url = getString(R.string.source_url)
         val faad = getString(R.string.faad_notice)
         openSheet(
-            "Radvela " + versionName(),
+            "Aethera " + versionName(),
             txt(getString(R.string.about_text) + (if (faad.isNotEmpty()) "\n\n$faad" else "") + (if (url.isNotEmpty()) "\n\n" + fmt(R.string.about_source, url) else ""), tx(2.6f), Pal.TEXT),
             Act(getString(R.string.act_ok), primary = true) {}
         )
@@ -1922,7 +1924,7 @@ class MainActivity : Activity(), RadioService.Ui {
                     tuner.markers = list.map { it.freqHz }
                     tuner.favs = list.filter { it.key in s.favorites }.map { it.freqHz }.toSet()
                 }
-                nameText.put(if (musicOn) s.music.title else "Radvela")
+                nameText.put(if (musicOn) s.music.title else "Aethera")
                 setNowLogo("")
                 subText.put(if (musicOn) s.music.artist else getString(if (st.connected) R.string.sub_idle_ready else R.string.sub_idle_noconn))
                 rtText.put("")

@@ -1093,7 +1093,7 @@ class RadioService : Service(), NativeRadio.Listener {
     // ------------------------------------------------------------------ Bildirim / oturum / ses odağı
 
     private fun setupSession() {
-        val s = MediaSession(this, "Radvela")
+        val s = MediaSession(this, "Aethera")
         s.setCallback(object : MediaSession.Callback() {
             override fun onPlay() { main.post { playAny() } }
             override fun onPause() { main.post { pauseAny() } }
@@ -1113,7 +1113,7 @@ class RadioService : Service(), NativeRadio.Listener {
     private fun title(): String = if (music.active) music.title else when (state.mode) {
         "fm" -> if (state.ps.isNotEmpty()) state.ps else formatMhz(state.fmHz)
         "dab" -> if (state.dabLabel.isNotEmpty()) state.dabLabel else "DAB+ " + state.dabChannel
-        else -> "Radvela"
+        else -> "Aethera"
     }
 
     private fun subtitle(): String = if (music.active) music.artist.ifEmpty { str(R.string.music_title) } else when (state.mode) {

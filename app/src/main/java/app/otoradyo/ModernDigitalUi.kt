@@ -48,27 +48,27 @@ internal class ModernDigitalUi(h: MainActivity) : BaseUi(h) {
 
     override val root = LinearLayout(ctx).apply {
         orientation = LinearLayout.VERTICAL
-        setBackgroundColor(Color.BLACK)
-        setPadding(h.m(2.2f), h.m(1.4f), h.m(2.2f), h.m(1.6f))
+        background = GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, intArrayOf(0xFF0C1D21.toInt(), 0xFF050B0D.toInt(), 0xFF000000.toInt()))
+        setPadding(h.m(2.4f), h.m(1.6f), h.m(2.4f), h.m(1.8f))
         h.autoSize(big, h.mf(6f), h.mf(if (h.land) 18f else 15f))
         h.autoSize(title, h.mf(2.6f), h.mf(5.4f))
         addView(LinearLayout(ctx).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
-            addView(seg.view, h.lp(-2, h.m(5.6f)))
-            addView(status, h.lpm(0, -2, 1f, h.m(2f), 0, h.m(1f), 0))
-            addView(level, h.lpm(h.m(11f), h.m(1f), 0f, 0, 0, h.m(1.6f), 0))
-            addView(signal, h.lpm(h.m(9f), h.m(3.4f), 0f, 0, 0, h.m(1.6f), 0))
-            addView(clock(Color.WHITE, h.tx(3f)), h.lpm(-2, -2, 0f, 0, 0, h.m(1.4f), 0))
-            addView(btn(Glyph.MENU, Color.WHITE, surf, surfP, h.m(3f), 0.28f) { h.openMenu() }, h.lp(h.m(6.2f), h.m(6.2f)))
-        }, h.lp(-1, h.m(6.6f)))
+            addView(seg.view, h.lp(-2, h.m(5.8f)))
+            addView(status, h.lpm(0, -2, 1f, h.m(2.2f), 0, h.m(1f), 0))
+            addView(level, h.lpm(h.m(11f), h.m(1.2f), 0f, 0, 0, h.m(1.6f), 0))
+            addView(signal, h.lpm(h.m(9f), h.m(3.6f), 0f, 0, 0, h.m(1.6f), 0))
+            addView(clock(Color.WHITE, h.tx(3.2f)), h.lpm(-2, -2, 0f, 0, 0, h.m(1.6f), 0))
+            addView(btn(Glyph.MENU, Color.WHITE, surf, surfP, h.m(3.2f), 0.28f) { h.openMenu() }, h.lp(h.m(6.6f), h.m(6.6f)))
+        }, h.lp(-1, h.m(7f)))
 
         val names = LinearLayout(ctx).apply {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER_VERTICAL
-            addView(title, h.lp(-1, h.m(6.4f)))
+            addView(title, h.lp(-1, h.m(6.6f)))
             addView(info, h.lp(-1, -2))
-            addView(text, h.lpm(-1, -2, 0f, 0, h.m(0.6f), 0, 0))
+            addView(text, h.lpm(-1, -2, 0f, 0, h.m(0.8f), 0, 0))
             addView(msg, h.lp(-1, -2))
         }
         if (h.land) {
@@ -77,15 +77,15 @@ internal class ModernDigitalUi(h: MainActivity) : BaseUi(h) {
                 gravity = Gravity.CENTER_VERTICAL
                 addView(big, h.lpm(h.wPct(30f), -1, 0f, 0, 0, h.m(2f), 0))
                 addView(names, h.lp(0, -2, 1f))
-            }, h.lp(-1, h.m(21f)))
+            }, h.lp(-1, h.m(21.5f)))
         } else {
-            addView(big, h.lp(-1, h.m(18f)))
+            addView(big, h.lp(-1, h.m(18.5f)))
             addView(names, h.lp(-1, -2))
         }
-        addView(spectrum, h.lpm(-1, 0, 1f, 0, h.m(1f), 0, h.m(1f)))
-        addView(controls, h.lpm(-1, h.m(10.2f), 0f, 0, 0, 0, h.m(1.2f)))
-        addView(scan.view, h.lpm(-1, -2, 0f, 0, 0, 0, h.m(1.2f)))
-        addView(strip.view, h.lp(-1, h.m(9f)))
+        addView(spectrum, h.lpm(-1, 0, 1f, 0, h.m(1.2f), 0, h.m(1.2f)))
+        addView(controls, h.lpm(-1, h.m(10.8f), 0f, 0, 0, 0, h.m(1.4f)))
+        addView(scan.view, h.lpm(-1, -2, 0f, 0, 0, 0, h.m(1.4f)))
+        addView(strip.view, h.lp(-1, h.m(9.5f)))
     }
 
     private var wasLive = false

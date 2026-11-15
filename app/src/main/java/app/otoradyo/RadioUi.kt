@@ -218,22 +218,30 @@ internal class SpectrumView(ctx: Context, private val source: () -> AudioSpectru
         set(v) { if (v != field) { field = v; shader = null; invalidate() } }
     private val p = Paint(Paint.ANTI_ALIAS_FLAG)
     private val r = RectF()
+    private val capRect = RectF()
     private var shader: Shader? = null
 
     override fun onDraw(c: Canvas) {
         val lv = source()?.levels ?: return
-        if (shader == null) shader = LinearGradient(0f, height.toFloat(), 0f, 0f, color, 0xFF2B6CFF.toInt(), Shader.TileMode.CLAMP)
+        if (shader == null) shader = LinearGradient(0f, height.toFloat(), 0f, 0f, color, 0xFF4A90E2.toInt(), Shader.TileMode.CLAMP)
         p.shader = shader
         val n = lv.size
-        val gap = width * 0.006f
+        val gap = width * 0.008f
         val w = (width - gap * (n - 1)) / n
         val on = live()
         for (i in 0 until n) {
             val v = if (on) lv[i] else 0f
-            val bh = kotlin.math.max(height * 0.02f, height * v)
+            val bh = kotlin.math.max(height * 0.03f, height * v)
             val x = i * (w + gap)
             r.set(x, height - bh, x + w, height.toFloat())
-            c.drawRoundRect(r, w * 0.2f, w * 0.2f, p)
+            c.drawRoundRect(r, w * 0.3f, w * 0.3f, p)
+            if (on && bh > height * 0.06f) {
+                p.shader = null
+                p.color = 0xAAFFFFFF.toInt()
+                capRect.set(x, height - bh, x + w, height - bh + height * 0.015f)
+                c.drawRoundRect(capRect, w * 0.3f, w * 0.3f, p)
+                p.shader = shader
+            }
         }
         if (on) postInvalidateOnAnimation()
     }

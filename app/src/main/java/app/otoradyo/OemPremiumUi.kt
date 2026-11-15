@@ -45,7 +45,7 @@ internal class OemPremiumUi(h: MainActivity) : BaseUi(h) {
 
     override val root = LinearLayout(ctx).apply {
         orientation = LinearLayout.VERTICAL
-        background = GradientDrawable(GradientDrawable.Orientation.TL_BR, intArrayOf(0xFF1A1B1D.toInt(), 0xFF0A0A0B.toInt()))
+        background = GradientDrawable(GradientDrawable.Orientation.TL_BR, intArrayOf(0xFF222429.toInt(), 0xFF131518.toInt(), 0xFF08090A.toInt()))
         setPadding(h.m(2.4f), h.m(1.6f), h.m(2.4f), h.m(1.8f))
 
         h.autoSize(title, h.mf(3.5f), h.mf(if (h.land) 13f else 11f))

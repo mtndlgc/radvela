@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Otomatik üretildi (i18n/gen.py). Elle düzenlemeyin. -->
 <resources>
-    <string name="app_name">Radvela</string>
+    <string name="app_name">Aethera</string>
     <string name="color_red">Red</string>
     <string name="color_amber">Amber</string>
     <string name="color_green">Green</string>

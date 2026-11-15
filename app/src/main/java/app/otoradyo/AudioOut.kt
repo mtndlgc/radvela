@@ -17,18 +17,18 @@ import android.os.Build
  */
 class AudioOut {
     companion object {
-        /** Ön ayarlar: düşükten yükseğe 5 noktada dB. Sıra menüdeki adlarla aynıdır. */
+        /** Ön ayarlar: düşükten yükseğe 5 noktada dB (Stüdyo Kalitesinde Akustik Ayar). */
         private val EQ_CURVES = listOf(
-            intArrayOf(0, 0, 0, 0, 0),     // düz
-            intArrayOf(6, 4, 0, 0, 0),     // bas
-            intArrayOf(-2, 0, 3, 3, 0),    // konuşma
-            intArrayOf(0, 0, 0, 3, 6),     // tiz
-            intArrayOf(5, 2, 0, 2, 5),     // gürlük
-            intArrayOf(4, 2, -1, 2, 4),    // rock
-            intArrayOf(-1, 2, 4, 2, -1),   // pop
-            intArrayOf(3, 2, -1, 1, 2),    // caz
-            intArrayOf(3, 1, 0, 1, 3),     // klasik
-            intArrayOf(5, 3, -1, 2, 4),    // elektronik
+            intArrayOf(0, 0, 0, 0, 0),     // düz (Flat)
+            intArrayOf(5, 3, 0, 0, 1),     // bas (Warm Bass Boost)
+            intArrayOf(-2, 0, 3, 4, 1),    // konuşma (Vocal Clarity)
+            intArrayOf(-1, 0, 0, 3, 5),    // tiz (Treble Brilliance)
+            intArrayOf(4, 2, -1, 2, 4),    // gürlük (Loudness / V-Shape)
+            intArrayOf(4, 2, 0, 2, 4),     // rock (Punchy Rock)
+            intArrayOf(3, 2, 1, 2, 3),     // pop (Dynamic Pop)
+            intArrayOf(3, 1, 0, 1, 3),     // caz (Acoustic Jazz)
+            intArrayOf(2, 1, 0, 1, 2),     // klasik (Symphonic Classical)
+            intArrayOf(5, 3, -1, 2, 4),    // elektronik (Deep Electronic)
         )
 
         /** Verilen ses oturumuna ön ayarı uygular; düz ön ayarda ya da cihaz desteklemiyorsa null döner. */
